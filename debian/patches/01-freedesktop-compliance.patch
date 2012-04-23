@@ -1,10 +1,10 @@
-Description:  Fix validation issues
-Authors: Nico Golde <nion@debian.org>, Siegfried-Angel Gevatter <rainct@ubuntu.com>
+Authors: Nico Golde <nion@debian.org>
+         Siegfried-Angel Gevatter <rainct@ubuntu.com>
+Description: Fix validation issues
 
-Index: obconf-2.0.3+git20110808/obconf.desktop
-===================================================================
---- obconf-2.0.3+git20110808.orig/obconf.desktop	2011-08-05 18:05:10.000000000 +0200
-+++ obconf-2.0.3+git20110808/obconf.desktop	2011-12-15 22:38:08.699538521 +0100
+diff -Naurp obconf.orig/obconf.desktop obconf/obconf.desktop
+--- obconf.orig/obconf.desktop	2011-08-05 18:05:10.000000000 +0200
++++ obconf/obconf.desktop	2012-04-23 07:04:35.906733630 +0200
 @@ -1,13 +1,19 @@
  [Desktop Entry]
 -Encoding=UTF-8
@@ -28,10 +28,9 @@ Index: obconf-2.0.3+git20110808/obconf.desktop
 +MimeType=application/x-openbox-theme;
  StartupNotify=true
  Terminal=false
-Index: obconf-2.0.3+git20110808/x-openbox-theme.desktop
-===================================================================
---- obconf-2.0.3+git20110808.orig/x-openbox-theme.desktop	2011-08-05 18:05:10.000000000 +0200
-+++ obconf-2.0.3+git20110808/x-openbox-theme.desktop	2011-12-15 22:38:08.699538521 +0100
+diff -Naurp obconf.orig/x-openbox-theme.desktop obconf/x-openbox-theme.desktop
+--- obconf.orig/x-openbox-theme.desktop	2011-08-05 18:05:10.000000000 +0200
++++ obconf/x-openbox-theme.desktop	2012-04-23 07:04:35.906733630 +0200
 @@ -1,7 +1,8 @@
  [Desktop Entry]
 -Encoding=UTF-8
