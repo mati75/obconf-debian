@@ -42,9 +42,8 @@ DIST_COMMON = README $(am__configure_deps) $(dist_desktop_DATA) \
 	$(dist_glade_DATA) $(dist_kdemime_DATA) $(dist_mimepkg_DATA) \
 	$(dist_noinst_DATA) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(top_srcdir)/configure ABOUT-NLS \
-	AUTHORS COPYING ChangeLog INSTALL NEWS TODO compile \
-	config.guess config.rpath config.sub depcomp install-sh \
-	missing
+	AUTHORS COPYING INSTALL NEWS TODO compile config.guess \
+	config.rpath config.sub depcomp install-sh missing
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
@@ -67,6 +66,7 @@ am__dirstamp = $(am__leading_dot)dirstamp
 am_src_obconf_OBJECTS = src/src_obconf-about.$(OBJEXT) \
 	src/src_obconf-archive.$(OBJEXT) \
 	src/src_obconf-windows.$(OBJEXT) \
+	src/src_obconf-margins.$(OBJEXT) \
 	src/src_obconf-mouse.$(OBJEXT) \
 	src/src_obconf-desktops.$(OBJEXT) \
 	src/src_obconf-dock.$(OBJEXT) src/src_obconf-main.$(OBJEXT) \
@@ -240,7 +240,7 @@ desktopdir = $(datadir)/applications
 mimedir = $(datadir)/mime
 mimepkgdir = $(datadir)/mime/packages
 kdemimedir = $(datadir)/mimelnk/application
-AUTOMAKE_OPTIONS = subdir-objects
+AUTOMAKE_OPTIONS = subdir-objects foreign
 ACLOCAL_AMFLAGS = -I m4
 src_obconf_CPPFLAGS = \
 	$(OPENBOX_CFLAGS) \
@@ -272,6 +272,8 @@ src_obconf_SOURCES = \
 	src/archive.h \
 	src/windows.c \
 	src/windows.h \
+	src/margins.c \
+	src/margins.h \
 	src/mouse.c \
 	src/mouse.h \
 	src/desktops.c \
@@ -292,7 +294,8 @@ src_obconf_SOURCES = \
 	src/tree.h
 
 dist_glade_DATA = \
-	src/obconf.glade
+	src/obconf.glade \
+	pixmaps/video-display.png
 
 dist_noinst_DATA = \
 	src/obconf.gladep
@@ -309,6 +312,7 @@ dist_kdemime_DATA = \
 EXTRA_DIST = \
 	config.rpath \
 	README \
+	CHANGELOG \
 	COPYING \
 	AUTHORS \
 	m4/codeset.m4 \
@@ -341,11 +345,7 @@ EXTRA_DIST = \
 	m4/wchar_t.m4 \
 	m4/wint_t.m4 \
 	m4/xsize.m4 \
-	debian/changelog.in \
-	debian/compat \
-	debian/control \
-	debian/menu \
-	debian/rules \
+	data/video-display.svg \
 	config.rpath
 
 all: all-recursive
@@ -358,15 +358,15 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
-	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu '; \
-	      cd $(srcdir) && $(AUTOMAKE) --gnu  \
+	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign '; \
+	      cd $(srcdir) && $(AUTOMAKE) --foreign  \
 		&& exit 0; \
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  Makefile'; \
 	cd $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu  Makefile
+	  $(AUTOMAKE) --foreign  Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
@@ -420,6 +420,8 @@ src/src_obconf-archive.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/src_obconf-windows.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/src_obconf-margins.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 src/src_obconf-mouse.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/src_obconf-desktops.$(OBJEXT): src/$(am__dirstamp) \
@@ -450,6 +452,7 @@ mostlyclean-compile:
 	-rm -f src/src_obconf-desktops.$(OBJEXT)
 	-rm -f src/src_obconf-dock.$(OBJEXT)
 	-rm -f src/src_obconf-main.$(OBJEXT)
+	-rm -f src/src_obconf-margins.$(OBJEXT)
 	-rm -f src/src_obconf-mouse.$(OBJEXT)
 	-rm -f src/src_obconf-preview.$(OBJEXT)
 	-rm -f src/src_obconf-preview_update.$(OBJEXT)
@@ -466,6 +469,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-desktops.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-dock.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-margins.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-mouse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-preview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-preview_update.Po@am__quote@
@@ -530,6 +534,20 @@ src/src_obconf-windows.obj: src/windows.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/windows.c' object='src/src_obconf-windows.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/src_obconf-windows.obj `if test -f 'src/windows.c'; then $(CYGPATH_W) 'src/windows.c'; else $(CYGPATH_W) '$(srcdir)/src/windows.c'; fi`
+
+src/src_obconf-margins.o: src/margins.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/src_obconf-margins.o -MD -MP -MF "src/$(DEPDIR)/src_obconf-margins.Tpo" -c -o src/src_obconf-margins.o `test -f 'src/margins.c' || echo '$(srcdir)/'`src/margins.c; \
+@am__fastdepCC_TRUE@	then mv -f "src/$(DEPDIR)/src_obconf-margins.Tpo" "src/$(DEPDIR)/src_obconf-margins.Po"; else rm -f "src/$(DEPDIR)/src_obconf-margins.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/margins.c' object='src/src_obconf-margins.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/src_obconf-margins.o `test -f 'src/margins.c' || echo '$(srcdir)/'`src/margins.c
+
+src/src_obconf-margins.obj: src/margins.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/src_obconf-margins.obj -MD -MP -MF "src/$(DEPDIR)/src_obconf-margins.Tpo" -c -o src/src_obconf-margins.obj `if test -f 'src/margins.c'; then $(CYGPATH_W) 'src/margins.c'; else $(CYGPATH_W) '$(srcdir)/src/margins.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "src/$(DEPDIR)/src_obconf-margins.Tpo" "src/$(DEPDIR)/src_obconf-margins.Po"; else rm -f "src/$(DEPDIR)/src_obconf-margins.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/margins.c' object='src/src_obconf-margins.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/src_obconf-margins.obj `if test -f 'src/margins.c'; then $(CYGPATH_W) 'src/margins.c'; else $(CYGPATH_W) '$(srcdir)/src/margins.c'; fi`
 
 src/src_obconf-mouse.o: src/mouse.c
 @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/src_obconf-mouse.o -MD -MP -MF "src/$(DEPDIR)/src_obconf-mouse.Tpo" -c -o src/src_obconf-mouse.o `test -f 'src/mouse.c' || echo '$(srcdir)/'`src/mouse.c; \
@@ -861,7 +879,7 @@ distclean-tags:
 distdir: $(DISTFILES)
 	$(am__remove_distdir)
 	mkdir $(distdir)
-	$(mkdir_p) $(distdir)/debian $(distdir)/m4 $(distdir)/po $(distdir)/src
+	$(mkdir_p) $(distdir)/data $(distdir)/m4 $(distdir)/pixmaps $(distdir)/po $(distdir)/src
 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
 	list='$(DISTFILES)'; for file in $$list; do \
