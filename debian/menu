@@ -4,4 +4,3 @@
   title="Openbox Configuration Manager"\
   command="/usr/bin/obconf"\
   icon="/usr/share/pixmaps/obconf.xpm"
-

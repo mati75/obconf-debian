@@ -27,7 +27,7 @@ obconf (2.0.3+git20110808-0ubuntu2) precise; urgency=low
 
   * debian/patches/02_show_specific_tab.dpatch:
    - Complete the patch, it was partly dropped in the last upload.
-    (LP: #877404) 
+    (LP: #877404)
 
  -- Julien Lavergne <gilir@ubuntu.com>  Mon, 24 Oct 2011 00:10:33 +0200
 
