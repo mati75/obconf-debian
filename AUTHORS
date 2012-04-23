@@ -1,8 +1,10 @@
 ObConf is written by:
 
- - Ben Jansens (ben@openbox.org)
+ - Dana Jansens (danakj@orodu.net)
    - Initial code.
  - Tim Riley (tr@slackzone.org)
    - HIG adherence changes.
    - Interface improvements.
    - Maintainence.
+ - Javeed Shaikh (syscrash2k@gmail.com)
+   - Theme previews

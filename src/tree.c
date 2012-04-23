@@ -1,7 +1,7 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
    tree.c for ObConf, the configuration tool for Openbox
-   Copyright (c) 2003        Ben Jansens
+   Copyright (c) 2003-2007   Dana Jansens
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -18,10 +18,9 @@
 
 #include "tree.h"
 #include "main.h"
-#include "openbox/parse.h"
 
-#include <sys/types.h>
-#include <signal.h>
+#include <openbox/parse.h>
+#include <gdk/gdkx.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
 {
@@ -33,11 +32,43 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
 
     nodes = g_strsplit(path, "/", 0);
     for (it = nodes; *it; it = next) {
+        gchar **attrs;
+        gboolean ok = FALSE;
+
+        attrs = g_strsplit(*it, ":", 0);
         next = it + 1;
-        c = parse_find_node(*it, n->children);
-        if (!c)
-            c = xmlNewTextChild(n, NULL, *it, *next ? NULL : def);
+
+        /* match attributes */
+        c = parse_find_node(attrs[0], n->children);
+        while (c && !ok) {
+            gint i;
+
+            ok = TRUE;
+            for (i = 1; attrs[i]; ++i) {
+                gchar **eq = g_strsplit(attrs[i], "=", 2);
+                if (eq[1] && !parse_attr_contains(eq[1], c, eq[0]))
+                    ok = FALSE;
+                g_strfreev(eq);
+            }
+            if (!ok)
+                c = parse_find_node(attrs[0], c->next);
+        }
+
+        if (!c) {
+            gint i;
+
+            c = xmlNewTextChild(n, NULL, attrs[0], *next ? NULL : def);
+
+            for (i = 1; attrs[i]; ++i) {
+                gchar **eq = g_strsplit(attrs[i], "=", 2);
+                if (eq[1])
+                    xmlNewProp(c, eq[0], eq[1]);
+                g_strfreev(eq);
+            }
+        }
         n = c;
+
+        g_strfreev(attrs);
     }
 
     g_strfreev(nodes);
@@ -67,19 +98,21 @@ void tree_apply()
     g_free(p);
 
     if (!err) {
-        GdkAtom type;
-        gint format;
-        gint length;
-        guint *pid;
+        XEvent ce;
 
-        if (gdk_property_get
-            (gdk_screen_get_root_window(gdk_screen_get_default()),
-             gdk_atom_intern("_OPENBOX_PID", FALSE),
-             gdk_atom_intern("CARDINAL", FALSE),
-             0, 4, FALSE, &type, &format, &length, (guchar**)&pid)) {
-            kill(*pid, SIGUSR2);
-            g_free(pid);
-        }
+        ce.xclient.type = ClientMessage;
+        ce.xclient.message_type = gdk_x11_get_xatom_by_name("_OB_CONTROL");
+        ce.xclient.display = GDK_DISPLAY();
+        ce.xclient.window = GDK_ROOT_WINDOW();
+        ce.xclient.format = 32;
+        ce.xclient.data.l[0] = 1; /* reconfigure */
+        ce.xclient.data.l[1] = 0;
+        ce.xclient.data.l[2] = 0;
+        ce.xclient.data.l[3] = 0;
+        ce.xclient.data.l[4] = 0;
+        XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), FALSE,
+                   SubstructureNotifyMask | SubstructureRedirectMask,
+                   &ce);
     }
 }
 

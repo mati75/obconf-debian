@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Ben Jansens
+# Copyright (C) YEAR Dana Jansens
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: ben@openbox.org\n"
-"POT-Creation-Date: 2006-03-07 18:28+1030\n"
+"Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
+"POT-Creation-Date: 2007-06-10 19:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,28 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/strings.c:7
-msgid "Openbox Window Preferences"
+msgid "Openbox Configuration Manager"
 msgstr ""
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
 msgstr ""
 
-#: src/strings.c:9 src/strings.c:11 src/strings.c:22 src/strings.c:24
-#: src/strings.c:30 src/strings.c:33 src/strings.c:41 src/strings.c:46
-#: src/strings.c:57 src/strings.c:64 src/strings.c:69 src/strings.c:71
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
+#: src/strings.c:36 src/strings.c:39 src/strings.c:42 src/strings.c:48
+#: src/strings.c:60 src/strings.c:62 src/strings.c:69 src/strings.c:75
+#: src/strings.c:78 src/strings.c:83 src/strings.c:94 src/strings.c:97
+#: src/strings.c:103 src/strings.c:108 src/strings.c:110 src/strings.c:113
 msgid "    "
 msgstr ""
 
 #: src/strings.c:10
-msgid "<span weight=\"bold\">Window Titles</span>"
+msgid "_Install a new theme..."
+msgstr ""
+
+#: src/strings.c:11
+msgid "Create a theme _archive (.obt)..."
 msgstr ""
 
 #: src/strings.c:12
-msgid "Button _order:"
+msgid "Theme"
 msgstr ""
 
 #: src/strings.c:13
+msgid "<span weight=\"bold\">Windows</span>"
+msgstr ""
+
+#: src/strings.c:15
+msgid "_Windows retain a border when undecorated"
+msgstr ""
+
+#: src/strings.c:16
+msgid "A_nimate iconify and restore"
+msgstr ""
+
+#: src/strings.c:17
+msgid "<span weight=\"bold\">Window Titles</span>"
+msgstr ""
+
+#: src/strings.c:19
+msgid "_Button order:"
+msgstr ""
+
+#: src/strings.c:20
 msgid ""
 "N - The window's icon\n"
 "D - The all-desktops (sticky) button\n"
@@ -49,197 +75,414 @@ msgid ""
 "C - The close button"
 msgstr ""
 
-#: src/strings.c:20
-msgid "Appearance"
-msgstr ""
-
-#: src/strings.c:21
-msgid "<span weight=\"bold\">Focusing Windows</span>"
-msgstr ""
-
-#: src/strings.c:23
-msgid "Focus windows when the _mouse pointer moves over them"
-msgstr ""
-
-#: src/strings.c:25
-msgid "_Raise windows when the mouse pointer moves over them"
-msgstr ""
-
-#: src/strings.c:26
-msgid "_Delay before focusing and raising windows:"
-msgstr ""
-
-#: src/strings.c:27 src/strings.c:73
-msgid "ms"
-msgstr ""
-
-#: src/strings.c:28
-msgid "Focus _new windows when they appear"
+#: src/strings.c:27
+msgid "<span weight=\"bold\">Fonts</span>"
 msgstr ""
 
 #: src/strings.c:29
-msgid "<span weight=\"bold\">Placing Windows</span>"
+msgid "_Active window title: "
+msgstr ""
+
+#: src/strings.c:30
+msgid "_Inactive window title: "
 msgstr ""
 
 #: src/strings.c:31
-msgid "_Place new windows under the mouse pointer"
+msgid "Menu _header: "
 msgstr ""
 
 #: src/strings.c:32
-msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
+msgid "_Menu Item: "
+msgstr ""
+
+#: src/strings.c:33
+msgid "_On-screen display: "
 msgstr ""
 
 #: src/strings.c:34
-msgid "Update the window c_ontents while resizing"
+msgid "Appearance"
 msgstr ""
 
-#: src/strings.c:35
-msgid "Amount of resistance against other _windows:"
-msgstr ""
-
-#: src/strings.c:36 src/strings.c:38
-msgid "px"
+#: src/strings.c:35 src/strings.c:59
+msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr ""
 
 #: src/strings.c:37
-msgid "Amount of resistance against screen _edges:"
+msgid "Focus _new windows when they appear"
 msgstr ""
 
-#: src/strings.c:39
-msgid "Behavior"
+#: src/strings.c:38
+msgid "<span weight=\"bold\">Placing Windows</span>"
 msgstr ""
 
 #: src/strings.c:40
-msgid "<span weight=\"bold\">Desktops</span>"
+msgid "_Place new windows under the mouse pointer"
 msgstr ""
 
-#: src/strings.c:42
-msgid "Number of _desktops: "
+#: src/strings.c:41
+msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
 msgstr ""
 
 #: src/strings.c:43
-msgid "Desktop _names:"
+msgid "Update the window contents while _resizing"
 msgstr ""
 
 #: src/strings.c:44
-msgid "Desktops"
+msgid "_Show information dialog:"
 msgstr ""
 
 #: src/strings.c:45
-msgid "<span weight=\"bold\">Position</span>"
+msgid "When resizing terminal windows"
+msgstr ""
+
+#: src/strings.c:46
+msgid "Always"
 msgstr ""
 
 #: src/strings.c:47
-msgid "_Position:"
-msgstr ""
-
-#: src/strings.c:48
-msgid "Top Left"
+msgid "Never"
 msgstr ""
 
 #: src/strings.c:49
-msgid "Top"
+msgid "Information _dialog's position:"
 msgstr ""
 
 #: src/strings.c:50
-msgid "Top Right"
+msgid "Centered on the window"
 msgstr ""
 
 #: src/strings.c:51
-msgid "Left"
+msgid "Above the window"
 msgstr ""
 
 #: src/strings.c:52
-msgid "Right"
+msgid "Drag _threshold distance:"
 msgstr ""
 
-#: src/strings.c:53
-msgid "Bottom Left"
+#: src/strings.c:53 src/strings.c:55 src/strings.c:57
+msgid "px"
 msgstr ""
 
 #: src/strings.c:54
-msgid "Bottom"
-msgstr ""
-
-#: src/strings.c:55
-msgid "Bottom Right"
+msgid "Amount of resistance against other _windows:"
 msgstr ""
 
 #: src/strings.c:56
-msgid "Floating"
+msgid "Amount of resistance against screen _edges:"
 msgstr ""
 
 #: src/strings.c:58
-msgid "_Floating position:"
-msgstr ""
-
-#: src/strings.c:59
-msgid "x"
-msgstr ""
-
-#: src/strings.c:60
-msgid "_Orientation: "
+msgid "Windows"
 msgstr ""
 
 #: src/strings.c:61
-msgid "Vertical"
-msgstr ""
-
-#: src/strings.c:62
-msgid "Horizontal"
+msgid "_Focus windows when the mouse pointer moves over them"
 msgstr ""
 
 #: src/strings.c:63
-msgid "<span weight=\"bold\">Stacking</span>"
+msgid "Move focus under the mouse when _switching desktops"
+msgstr ""
+
+#: src/strings.c:64
+msgid "Move focus _under the mouse when the mouse is not moving"
 msgstr ""
 
 #: src/strings.c:65
-msgid "Keep dock _above other windows"
+msgid "_Raise windows when the mouse pointer moves over them"
 msgstr ""
 
 #: src/strings.c:66
-msgid "A_llow dock to be both above and below windows"
+msgid "_Delay before focusing and raising windows:"
 msgstr ""
 
-#: src/strings.c:67
-msgid "Keep dock _below other windows"
+#: src/strings.c:67 src/strings.c:74 src/strings.c:112 src/strings.c:115
+msgid "ms"
 msgstr ""
 
 #: src/strings.c:68
-msgid "<span weight=\"bold\">Hiding</span>"
+msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr ""
 
 #: src/strings.c:70
-msgid "_Hide off screen"
+msgid "Double click on the _titlebar:"
+msgstr ""
+
+#: src/strings.c:71
+msgid "Maximizes the window"
 msgstr ""
 
 #: src/strings.c:72
-msgid "_Delay before hiding:"
+msgid "Shades the window"
 msgstr ""
 
-#: src/strings.c:74
-msgid "Dock"
-msgstr ""
-
-#: src/strings.c:75
-msgid "About"
+#: src/strings.c:73
+msgid "Double click ti_me:"
 msgstr ""
 
 #: src/strings.c:76
-msgid "About ObConf"
+msgid "Mouse"
 msgstr ""
 
 #: src/strings.c:77
-msgid "<span weight=\"bold\" size=\"xx-large\">ObConf 3.0</span>"
-msgstr ""
-
-#: src/strings.c:78
-msgid "A preferences manager for Openbox"
+msgid "<span weight=\"bold\">Desktops</span>"
 msgstr ""
 
 #: src/strings.c:79
+msgid "_Number of desktops: "
+msgstr ""
+
+#: src/strings.c:80
+msgid "_Desktop names:"
+msgstr ""
+
+#: src/strings.c:81
+msgid "Desktops"
+msgstr ""
+
+#: src/strings.c:82
+msgid "<span weight=\"bold\">Position</span>"
+msgstr ""
+
+#: src/strings.c:84
+msgid "_Position:"
+msgstr ""
+
+#: src/strings.c:85
+msgid "Top Left"
+msgstr ""
+
+#: src/strings.c:86
+msgid "Top"
+msgstr ""
+
+#: src/strings.c:87
+msgid "Top Right"
+msgstr ""
+
+#: src/strings.c:88
+msgid "Left"
+msgstr ""
+
+#: src/strings.c:89
+msgid "Right"
+msgstr ""
+
+#: src/strings.c:90
+msgid "Bottom Left"
+msgstr ""
+
+#: src/strings.c:91
+msgid "Bottom"
+msgstr ""
+
+#: src/strings.c:92
+msgid "Bottom Right"
+msgstr ""
+
+#: src/strings.c:93
+msgid "Floating"
+msgstr ""
+
+#: src/strings.c:95
+msgid "_Floating position:"
+msgstr ""
+
+#: src/strings.c:96
+msgid "x"
+msgstr ""
+
+#: src/strings.c:98
+msgid "Allow _windows to be placed within the dock's area"
+msgstr ""
+
+#: src/strings.c:99
+msgid "_Orientation: "
+msgstr ""
+
+#: src/strings.c:100
+msgid "Vertical"
+msgstr ""
+
+#: src/strings.c:101
+msgid "Horizontal"
+msgstr ""
+
+#: src/strings.c:102
+msgid "<span weight=\"bold\">Stacking</span>"
+msgstr ""
+
+#: src/strings.c:104
+msgid "Keep dock _above other windows"
+msgstr ""
+
+#: src/strings.c:105
+msgid "A_llow dock to be both above and below windows"
+msgstr ""
+
+#: src/strings.c:106
+msgid "Keep dock _below other windows"
+msgstr ""
+
+#: src/strings.c:107
+msgid "<span weight=\"bold\">Hiding</span>"
+msgstr ""
+
+#: src/strings.c:109
+msgid "_Hide off screen"
+msgstr ""
+
+#: src/strings.c:111
+msgid "_Delay before hiding:"
+msgstr ""
+
+#: src/strings.c:114
+msgid "Delay before _showing:"
+msgstr ""
+
+#: src/strings.c:116
+msgid "Dock"
+msgstr ""
+
+#: src/strings.c:117
+msgid "Abo_ut"
+msgstr ""
+
+#: src/strings.c:118
+msgid "About ObConf"
+msgstr ""
+
+#: src/strings.c:119
+msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+msgstr ""
+
+#: src/strings.c:120
+msgid "A preferences manager for Openbox"
+msgstr ""
+
+#: src/strings.c:121
 msgid ""
-"Copyright (c) 2003 \n"
-"Ben Jansens <ben@openbox.org>\n"
-"Tim Riley <tr@slackzone.org>"
+"Copyright (c) 2003-2007\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+msgstr ""
+
+#: src/strings.c:125
+msgid "window1"
+msgstr ""
+
+#: src/strings.c:126
+msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
+msgstr ""
+
+#: src/main.c:65 src/main.c:67
+msgid "Copyright (c)"
+msgstr ""
+
+#: src/main.c:79
+msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
+msgstr ""
+
+#: src/main.c:80
+msgid ""
+"\n"
+"Options:\n"
+msgstr ""
+
+#: src/main.c:81
+msgid "  --help                Display this help and exit\n"
+msgstr ""
+
+#: src/main.c:82
+msgid "  --version             Display the version and exit\n"
+msgstr ""
+
+#: src/main.c:83
+msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+msgstr ""
+
+#: src/main.c:84
+msgid ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+msgstr ""
+
+#: src/main.c:85
+#, c-format
+msgid ""
+"\n"
+"Please report bugs at %s\n"
+"\n"
+msgstr ""
+
+#: src/main.c:101
+msgid "--install requires an argument\n"
+msgstr ""
+
+#: src/main.c:107
+msgid "--archive requires an argument\n"
+msgstr ""
+
+#: src/desktops.c:111 src/desktops.c:142 src/desktops.c:158
+msgid "(Unnamed desktop)"
+msgstr ""
+
+#: src/theme.c:104 src/theme.c:136
+msgid "Choose an Openbox theme"
+msgstr ""
+
+#: src/theme.c:113
+msgid "Openbox theme archives"
+msgstr ""
+
+#: src/archive.c:40
+#, c-format
+msgid "\"%s\" was installed to %s"
+msgstr ""
+
+#: src/archive.c:65
+#, c-format
+msgid "\"%s\" was successfully created"
+msgstr ""
+
+#: src/archive.c:101
+#, c-format
+msgid ""
+"Unable to create the theme archive \"%s\".\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+
+#: src/archive.c:106 src/archive.c:190
+#, c-format
+msgid "Unable to run the \"tar\" command: %s"
+msgstr ""
+
+#: src/archive.c:126
+#, c-format
+msgid "Unable to create directory \"%s\": %s"
+msgstr ""
+
+#: src/archive.c:148
+#, c-format
+msgid "\"%s\" does not appear to be a valid Openbox theme directory"
+msgstr ""
+
+#: src/archive.c:158
+#, c-format
+msgid "Unable to move to directory \"%s\": %s"
+msgstr ""
+
+#: src/archive.c:197
+#, c-format
+msgid ""
+"Unable to extract the file \"%s\".\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox "
+"theme archive.\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+
+#: src/mouse.c:72
+msgid "Custom actions"
 msgstr ""

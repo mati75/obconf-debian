@@ -1,5 +1,5 @@
 AC_PREREQ([2.54])
-AC_INIT([obconf], [1.6], [http://bugzilla.icculus.org])
+AC_INIT([obconf], [2.0.1], [http://bugzilla.icculus.org])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/main.c])
 
@@ -16,16 +16,16 @@ AC_PROG_INSTALL
 LDFLAGS="$LDFLAGS -export-dynamic"
 
 ALL_LINGUAS=""
-AM_GNU_GETTEXT_VERSION(0.12.1)
+AM_GNU_GETTEXT_VERSION(0.15)
 AM_GNU_GETTEXT([external])
 
-PKG_CHECK_MODULES(OBLIBS, [obrender-3.0 obparser-3.0])
-AC_SUBST(OB_CFLAGS)
-AC_SUBST(OB_LIBS)
+PKG_CHECK_MODULES(OPENBOX, [obrender-3.0 >= 3.4.2 obparser-3.0 >= 3.4.2])
+AC_SUBST(OPENBOX_CFLAGS)
+AC_SUBST(OPENBOX_LIBS)
 
-PKG_CHECK_MODULES(STARTUP, [libstartup-notification-1.0])
-AC_SUBST(STARTUP_CFLAGS)
-AC_SUBST(STARTUP_LIBS)
+PKG_CHECK_MODULES(LIBSTARTUPNOTIFICATION, [libstartup-notification-1.0])
+AC_SUBST(LIBSTARTUPNOTIFICATION_CFLAGS)
+AC_SUBST(LIBSTARTUPNOTIFICATION_LIBS)
 
 PKG_CHECK_MODULES(GTK, [gtk+-2.0])
 AC_SUBST(GTK_CFLAGS)
@@ -39,6 +39,21 @@ PKG_CHECK_MODULES(GLADE, [libglade-2.0])
 AC_SUBST(GLADE_CFLAGS)
 AC_SUBST(GLADE_LIBS)
 
+AC_CHECK_PROG(TAR, [tar], [yes], [no])
+if test "$TAR" = "no"; then
+  AC_MSG_ERROR([Unable to find the tar command.])
+fi
+
+AC_CHECK_PROG(GZIP, [gzip], [yes], [no])
+if test "$GZIP" = "no"; then
+  AC_MSG_ERROR([Unable to find the gzip command.])
+fi
+
+AC_CHECK_PROG(GUNZIP, [gunzip], [yes], [no])
+if test "$GUNZIP" = "no"; then
+  AC_MSG_ERROR([Unable to find the gunzip command.])
+fi
+
 AC_CONFIG_FILES([
   Makefile
   po/Makefile.in
@@ -47,3 +62,5 @@ AC_OUTPUT
 
 AC_MSG_RESULT
 AC_MSG_RESULT([configure complete, now type \"make\"])
+
+
