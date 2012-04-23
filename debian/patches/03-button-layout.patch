@@ -1,11 +1,10 @@
-Description: Revert new button layout
 Authors: Julien Lavergne <gilir@ubuntu.com>
+Description: Revert new button layout.
 
-Index: obconf-2.0.3+git20110808/src/preview.c
-===================================================================
---- obconf-2.0.3+git20110808.orig/src/preview.c	2011-08-05 18:05:10.000000000 +0200
-+++ obconf-2.0.3+git20110808/src/preview.c	2011-12-15 22:39:01.551540140 +0100
-@@ -327,28 +327,28 @@
+diff -Naurp obconf.orig/src/preview.c obconf/src/preview.c
+--- obconf.orig/src/preview.c	2012-04-23 06:49:15.300632122 +0200
++++ obconf/src/preview.c	2012-04-23 07:05:19.431018918 +0200
+@@ -327,28 +327,28 @@ static GdkPixbuf* preview_window(RrTheme
              switch (*layout) {
              case 'D':
                  a = focus ?
