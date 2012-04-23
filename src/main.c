@@ -1,7 +1,7 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
    main.c for ObConf, the configuration tool for Openbox
-   Copyright (c) 2003        Ben Jansens
+   Copyright (c) 2003-2007   Dana Jansens
    Copyright (c) 2003        Tim Riley
 
    This program is free software; you can redistribute it and/or modify
@@ -18,18 +18,31 @@
 */
 
 #include "main.h"
-#include "handlers.h"
+#include "archive.h"
+#include "theme.h"
+#include "appearance.h"
+#include "windows.h"
+#include "mouse.h"
+#include "desktops.h"
+#include "dock.h"
+#include "preview_update.h"
+#include "gettext.h"
 
 #include <gdk/gdkx.h>
 #define SN_API_NOT_YET_FROZEN
 #include <libsn/sn.h>
 #undef SN_API_NOT_YET_FROZEN
+#include <stdlib.h>
 
-static GtkWidget *mainwin;
+GtkWidget *mainwin = NULL;
 
 GladeXML *glade;
 xmlDocPtr doc;
 xmlNodePtr root;
+RrInstance *rrinst;
+
+static gchar *obc_theme_install = NULL;
+static gchar *obc_theme_archive = NULL;
 
 void obconf_error(gchar *msg)
 {
@@ -46,15 +59,74 @@ void obconf_error(gchar *msg)
     gtk_widget_show(d);
 }
 
+static void print_version()
+{
+    g_print("ObConf %s\n", PACKAGE_VERSION);
+    g_print(_("Copyright (c)"));
+    g_print(" 2003-2007   Dana Jansens\n");
+    g_print(_("Copyright (c)"));
+    g_print(" 2003        Tim Riley\n\n");
+    g_print(" 2007        Javeed Shaikh\n\n");
+    g_print("This program comes with ABSOLUTELY NO WARRANTY.\n");
+    g_print("This is free software, and you are welcome to redistribute it\n");
+    g_print("under certain conditions. See the file COPYING for details.\n\n");
+
+    exit(EXIT_SUCCESS);
+}
+
+static void print_help()
+{
+    g_print(_("Syntax: obconf [options] [ARCHIVE.obt]\n"));
+    g_print(_("\nOptions:\n"));
+    g_print(_("  --help                Display this help and exit\n"));
+    g_print(_("  --version             Display the version and exit\n"));
+    g_print(_("  --install ARCHIVE.obt Install the given theme archive and select it\n"));
+    g_print(_("  --archive THEME       Create a theme archive from the given theme directory\n"));
+    g_print(_("\nPlease report bugs at %s\n\n"), PACKAGE_BUGREPORT);
+    
+    exit(EXIT_SUCCESS);
+}
+
+static void parse_args(int argc, char **argv)
+{
+    int i;
+
+    for (i = 1; i < argc; ++i) {
+        if (!strcmp(argv[i], "--help"))
+            print_help();
+        if (!strcmp(argv[i], "--version"))
+            print_version();
+        else if (!strcmp(argv[i], "--install")) {
+            if (i == argc - 1) /* no args left */
+                g_printerr(_("--install requires an argument\n"));
+            else
+                obc_theme_install = argv[++i];
+        }
+        else if (!strcmp(argv[i], "--archive")) {
+            if (i == argc - 1) /* no args left */
+                g_printerr(_("--archive requires an argument\n"));
+            else
+                obc_theme_archive = argv[++i];
+        } else
+            obc_theme_install = argv[i];
+    }
+}
+
 int main(int argc, char **argv)
 {
-    SnDisplay *sn_d;
-    SnLauncheeContext *sn_cx;
     gchar *p;
 
-    parse_paths_startup();
+    bindtextdomain(PACKAGE_NAME, LOCALEDIR);
+    bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
+    textdomain(PACKAGE_NAME);
 
     gtk_init(&argc, &argv);
+    parse_args(argc, argv);
+
+    if (obc_theme_archive) {
+        archive_create(obc_theme_archive);
+        return;
+    }
 
     p = g_build_filename(GLADEDIR, "obconf.glade", NULL);
     glade = glade_xml_new(p, NULL, NULL);
@@ -66,8 +138,11 @@ int main(int argc, char **argv)
         return 1;
     }
 
+    parse_paths_startup();
+    rrinst = RrInstanceNew(GDK_DISPLAY(), gdk_x11_get_default_screen());
+
     xmlIndentTreeOutput = 1;
-    if (!parse_load_rc(&doc, &root)) {
+    if (!parse_load_rc(NULL, &doc, &root)) {
         obconf_error("Failed to load an rc.xml. You have probably failed to "
                      "install Openbox properly.");
         return 1;
@@ -84,31 +159,57 @@ int main(int argc, char **argv)
         g_free(s);
     }
 
-    setup_behavior_tab();
-    setup_dock_tab();
-    setup_focus_mouse(glade_xml_get_widget(glade, "focus_mouse"));
-    setup_focus_raise(glade_xml_get_widget(glade, "focus_raise"));
-    setup_focus_delay(glade_xml_get_widget(glade, "focus_delay"));
-    setup_focus_new(glade_xml_get_widget(glade, "focus_new"));
-    setup_place_mouse(glade_xml_get_widget(glade, "place_mouse"));
-    setup_resist_window(glade_xml_get_widget(glade, "resist_window"));
-    setup_resist_edge(glade_xml_get_widget(glade, "resist_edge"));
-    setup_resize_contents(glade_xml_get_widget(glade, "resize_contents"));
-    setup_dock_position(glade_xml_get_widget(glade, "dock_position"));
-    setup_dock_float_x(glade_xml_get_widget(glade, "dock_float_x"));
-    setup_dock_float_y(glade_xml_get_widget(glade, "dock_float_y"));
-    setup_dock_stacking(glade_xml_get_widget(glade, "dock_stack_top"),
-                        glade_xml_get_widget(glade, "dock_stack_normal"),
-                        glade_xml_get_widget(glade, "dock_stack_bottom"));
-    setup_dock_direction(glade_xml_get_widget(glade, "dock_direction"));
-    setup_dock_hide(glade_xml_get_widget(glade, "dock_hide"));
-    setup_dock_hide_delay(glade_xml_get_widget(glade, "dock_hide_delay"));
-    setup_theme_names(glade_xml_get_widget(glade, "theme_names"));
-    setup_theme_layout(glade_xml_get_widget(glade, "theme_layout"));
-    setup_desktop_num(glade_xml_get_widget(glade, "desktop_num"));
-    setup_desktop_names(glade_xml_get_widget(glade, "desktop_names"));
+    theme_setup_tab();
+    appearance_setup_tab();
+    windows_setup_tab();
+    mouse_setup_tab();
+    desktops_setup_tab();
+    dock_setup_tab();
 
-    mainwin = glade_xml_get_widget(glade, "main_window");
+    mainwin = get_widget("main_window");
+
+    if (obc_theme_install)
+        theme_install(obc_theme_install);
+    else
+        theme_load_all();
+
+    /* the main window is not shown here ! it is shown when the theme previews
+       are completed */
+    gtk_main();
+
+    preview_update_set_active_font(NULL);
+    preview_update_set_inactive_font(NULL);
+    preview_update_set_menu_header_font(NULL);
+    preview_update_set_menu_item_font(NULL);
+    preview_update_set_osd_font(NULL);
+    preview_update_set_title_layout(NULL);
+
+    RrInstanceFree(rrinst);
+    parse_paths_shutdown();
+
+    xmlFreeDoc(doc);
+    return 0;
+}
+
+gboolean on_main_window_delete_event(GtkWidget *w, GdkEvent *e, gpointer d)
+{
+    gtk_main_quit();
+    return FALSE;
+}
+
+void on_close_clicked()
+{
+    gtk_main_quit();
+}
+
+void obconf_show_main()
+{
+    SnDisplay *sn_d;
+    SnLauncheeContext *sn_cx;
+
+    if (GTK_WIDGET_VISIBLE(mainwin)) return;
+
+    gtk_widget_show_all(mainwin);
 
     sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                           NULL, NULL);
@@ -121,19 +222,10 @@ int main(int argc, char **argv)
         sn_launchee_context_setup_window
             (sn_cx, GDK_WINDOW_XWINDOW(GDK_WINDOW(mainwin->window)));
 
-    gtk_widget_show_all(mainwin);
-
     if (sn_cx)
         sn_launchee_context_complete(sn_cx);
 
     if (sn_cx)
         sn_launchee_context_unref(sn_cx);
     sn_display_unref(sn_d);
-
-    gtk_main();
-
-    parse_paths_shutdown();
-
-    xmlFreeDoc(doc);
-    return 0;
 }
