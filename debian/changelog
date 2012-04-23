@@ -1,3 +1,17 @@
+obconf (2.0.2-2) unstable; urgency=low
+
+  [Nico Golde]
+  * Switched from Homepage tag to new Homepage field in control.
+  * Use Applications/System/Administration as menu section since
+    System is only meant as a root menu for other sub menus.
+
+  [Anibal Avelar]
+  * Added Vcs-Browser and Vcs-Svn fields in debian/control.
+  * Bumped standard version to 3.7.3.
+  * Added the fields Vcs-Browser and Vcs-Git in the debian/control file.
+
+ -- Anibal Avelar (Fixxxer) <aavelar@cofradia.org>  Thu, 10 Jan 2008 20:24:03 +0200
+
 obconf (2.0.2-1) unstable; urgency=low
 
   * New upstream release.

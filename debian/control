@@ -4,7 +4,10 @@ Priority: optional
 Maintainer: Openbox Maintainers <pkg-openbox@modprobe.de>
 Uploaders: Nico Golde <nion@debian.org>, Anibal Avelar (Fixxxer) <aavelar@cofradia.org>
 Build-Depends: debhelper (>= 5), autotools-dev, gettext, libobrender16, libobparser16, openbox-dev, libstartup-notification0-dev, libgtk2.0-dev, libglade2-dev, perl, libsm-dev, dpatch
-Standards-Version: 3.7.2
+Standards-Version: 3.7.3
+Homepage: http://icculus.org/openbox/index.php/ObConf:About
+Vcs-Browser: http://git.icculus.org/?p=dana/obconf.git
+Vcs-Git: git://git.icculus.org/dana/obconf 
 
 Package: obconf
 Architecture: any
@@ -15,5 +18,3 @@ Description: Preferences manager for Openbox window manager
  Openbox' preferences and configuration settings on the fly.
  .
  If you are an Openbox user, you may want this package.
- .
-  Homepage http://icculus.org/openbox/index.php/ObConf:About
