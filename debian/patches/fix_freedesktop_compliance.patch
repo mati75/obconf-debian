@@ -1,15 +1,10 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 01_fix_freedesktop_compliance.dpatch by Nico Golde <nion@debian.org>
-## and Siegfried-Angel Gevatter <rainct@ubuntu.com>.
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: - Fix some validation problems with the .desktop files
-## DP: - Add Catalan, German and Spanish translations to obconf.desktop.
+Description:  Fix validation issues
+Authors: Nico Golde <nion@debian.org>, Siegfried-Angel Gevatter <rainct@ubuntu.com>
 
-@DPATCH@
-diff -urNad obconf-2.0.3~/obconf.desktop obconf-2.0.3/obconf.desktop
---- obconf-2.0.3~/obconf.desktop	2008-01-26 07:25:09.000000000 +0100
-+++ obconf-2.0.3/obconf.desktop	2008-02-03 14:02:25.000000000 +0100
+Index: obconf-2.0.3+git20110808/obconf.desktop
+===================================================================
+--- obconf-2.0.3+git20110808.orig/obconf.desktop	2011-08-05 18:05:10.000000000 +0200
++++ obconf-2.0.3+git20110808/obconf.desktop	2011-12-15 22:38:08.699538521 +0100
 @@ -1,13 +1,19 @@
  [Desktop Entry]
 -Encoding=UTF-8
@@ -33,9 +28,10 @@ diff -urNad obconf-2.0.3~/obconf.desktop obconf-2.0.3/obconf.desktop
 +MimeType=application/x-openbox-theme;
  StartupNotify=true
  Terminal=false
-diff -urNad obconf-2.0.3~/x-openbox-theme.desktop obconf-2.0.3/x-openbox-theme.desktop
---- obconf-2.0.3~/x-openbox-theme.desktop	2008-01-11 19:22:11.000000000 +0100
-+++ obconf-2.0.3/x-openbox-theme.desktop	2008-02-03 14:03:25.000000000 +0100
+Index: obconf-2.0.3+git20110808/x-openbox-theme.desktop
+===================================================================
+--- obconf-2.0.3+git20110808.orig/x-openbox-theme.desktop	2011-08-05 18:05:10.000000000 +0200
++++ obconf-2.0.3+git20110808/x-openbox-theme.desktop	2011-12-15 22:38:08.699538521 +0100
 @@ -1,7 +1,8 @@
  [Desktop Entry]
 -Encoding=UTF-8

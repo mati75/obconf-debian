@@ -1,86 +1,15 @@
 #!/usr/bin/make -f
 
-
-# Extract the version of ObConf.
 VERSION=$(shell awk '/^PACKAGE_VERSION/ { print $$2 }' "FS='" configure)
 
-include /usr/share/dpatch/dpatch.make
+%:
+	dh $@ --with autoreconf
 
-# Detect cross compilation (works with autoconf >= 2.52).
-export DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-export DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
-ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
-  CONFIGFLAGS += --build $(DEB_HOST_GNU_TYPE)
-else
-  CONFIGFLAGS += --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
-endif
-
-# Allow compilation without optimisation.
-COMPILEFLAGS=-g
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	COMPILEFLAGS += -O0
-else
-	COMPILEFLAGS += -O2
-endif
-
-
-configure-stamp:
-	dh_testdir
-	# remove upstream debian/ stuff
-	-rm -f debian/changelog.in
-	ln -sf /usr/share/misc/config.sub .
-	ln -sf /usr/share/misc/config.guess .
-	rm -f config.cache
-	./configure $(CONFIGFLAGS) CFLAGS="$(COMPILEFLAGS)" --prefix=/usr
-	touch $@
-
-build-stamp: configure-stamp patch-stamp
-	dh_testdir
-	$(MAKE)
+override_dh_auto_build:
+	dh_auto_build
 	pod2man --section=1 --release=$(VERSION) --center \
 		"Openbox documentation" debian/obconf.pod > obconf.1
-	touch $@
 
-build: build-stamp
-
-
-clean: unpatch
-	dh_testdir
-	dh_testroot
-	dh_clean
-	[ ! -f Makefile ] || $(MAKE) distclean
-	rm -f config.sub
-	rm -f config.guess
-	rm -f obconf.1
-	rm -f build-stamp configure-stamp
-
-install: build-stamp
-	dh_testdir
-	dh_testroot
-	dh_clean
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/obconf
-	# don't install the TODO file since it is empty
-	cp debian/obconf.xpm $(CURDIR)/debian/obconf/usr/share/pixmaps/
-	rm -f $(CURDIR)/debian/obconf/usr/share/doc/obconf/TODO
-
-binary-indep:
-
-binary-arch: install
-	dh_testdir
-	dh_testroot
-	dh_installdocs AUTHORS README TODO
-	dh_installchangelogs
-	dh_installman obconf.1
-	dh_installmenu
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_shlibdeps
-	dh_md5sums
-	dh_gencontrol
-	dh_installdeb
-	dh_builddeb
-
-binary: binary-indep binary-arch
-
-.PHONY: build clean binary-indep binary-arch binary install
+#override_dh_auto_install:
+#	dh_auto_install
+#	rm -f $(CURDIR)/debian/obconf/usr/share/doc/obconf/TODO

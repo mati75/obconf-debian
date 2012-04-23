@@ -1,0 +1,64 @@
+Description:  Add an option to show a specific tab when starting obconf
+Authors: Julien Lavergne <gilir@ubuntu.com>
+
+Index: obconf-2.0.3+git20110808/src/main.c
+===================================================================
+--- obconf-2.0.3+git20110808.orig/src/main.c	2011-08-05 18:05:10.000000000 +0200
++++ obconf-2.0.3+git20110808/src/main.c	2011-12-15 22:38:34.579539315 +0100
+@@ -36,6 +36,7 @@
+ #include <stdlib.h>
+ 
+ GtkWidget *mainwin = NULL;
++GtkWidget *desktop_num = NULL;
+ 
+ GladeXML *glade;
+ xmlDocPtr doc;
+@@ -44,6 +45,7 @@
+ gchar *obc_config_file = NULL;
+ ObtPaths *paths;
+ ObtXmlInst *parse_i;
++gint obc_tab;
+ 
+ static gchar *obc_theme_install = NULL;
+ static gchar *obc_theme_archive = NULL;
+@@ -93,6 +95,7 @@
+     g_print(_("  --install ARCHIVE.obt Install the given theme archive and select it\n"));
+     g_print(_("  --archive THEME       Create a theme archive from the given theme directory\n"));
+     g_print(_("  --config-file FILE    Specify the path to the config file to use\n"));
++    g_print(_("  --tab NUMBER          Display the tab number NUMBER\n"));
+     g_print(_("\nPlease report bugs at %s\n\n"), PACKAGE_BUGREPORT);
+     
+     exit(EXIT_SUCCESS);
+@@ -124,6 +127,12 @@
+                 g_printerr(_("--config-file requires an argument\n"));
+             else
+                 obc_config_file = argv[++i];
++        }
++        else if (!strcmp(argv[i], "--tab")) {
++            if (i == argc - 1) /* no args left */
++                g_printerr(_("--tab requires an argument\n"));
++            else
++                obc_tab = atoi(argv[++i]) - 1;
+         } else
+             obc_theme_install = argv[i];
+     }
+@@ -282,6 +291,7 @@
+         dock_setup_tab();
+ 
+         mainwin = get_widget("main_window");
++        desktop_num = glade_xml_get_widget(glade, "notebook1");
+ 
+         if (obc_theme_install)
+             theme_install(obc_theme_install);
+@@ -329,6 +339,11 @@
+ 
+     gtk_widget_show_all(mainwin);
+ 
++    /*Focus on desktop number if --tab is passed*/
++    if (obc_tab){
++        gtk_notebook_set_current_page(GTK_NOTEBOOK(desktop_num),obc_tab);
++    }
++
+     sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
+                           NULL, NULL);
+ 

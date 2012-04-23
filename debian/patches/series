@@ -1,0 +1,4 @@
+fix_freedesktop_compliance.patch
+show_specific_tab.dpatch
+revert_new_button_layout.patch
+pt_BR.patch

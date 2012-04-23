@@ -1,3 +1,65 @@
+obconf (2.0.3+git20110808-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream snapshot is built with openbox 3.5 (Closes: #652199).
+  * Switch to format 3.0 (quilt).
+  * debian/patches/pt_BR.patch:
+    - Brazilian Portuguese translation (Closes: #607492).
+  * debian/compat:
+    - Bump compatibility level to 8.
+  * debian/control:
+    - Set Maintainer to Debian QA Group.
+    - Build-depend on dh-autoreconf, drop autotools-dev and automake.
+    - Build-depend on libimlib2-dev.
+    - Bump Standards-Version to 3.9.2.
+    - Remove Vcs-* fields.
+    - Add ${misc:Depends} to Depends field.
+  * debian/copyright:
+    - Use versioned link to common-licenses.
+  * debian/obconf.pod:
+    - Fix syntax error appearing with pod2man.
+  * debian/rules:
+    - Switch to dh.
+
+ -- Luca Falavigna <dktrkranz@debian.org>  Thu, 15 Dec 2011 23:15:55 +0100
+
+obconf (2.0.3+git20110808-0ubuntu2) precise; urgency=low
+
+  * debian/patches/02_show_specific_tab.dpatch:
+   - Complete the patch, it was partly dropped in the last upload.
+    (LP: #877404) 
+
+ -- Julien Lavergne <gilir@ubuntu.com>  Mon, 24 Oct 2011 00:10:33 +0200
+
+obconf (2.0.3+git20110808-0ubuntu1) oneiric; urgency=low
+
+  * New upstream snapshot, compatible with openbox 3.5.0 (LP: #831099).
+  * debian/rules:
+   - Add autoreconf command.
+  * debian/patches:
+   - 02_show_specific_tab.dpatch: Refresh.
+  * debian/control:
+   - Build-depends on automake and autopoint for autoreconf command.
+   - Bump build-depends on openbox-dev (>= 3.5.0).
+
+ -- Julien Lavergne <gilir@ubuntu.com>  Wed, 24 Aug 2011 20:31:37 +0200
+
+obconf (2.0.3-3ubuntu2) natty; urgency=low
+
+  * debian/patches/02_show_specific_tab.dpatch:
+   - Add an option to show a specific tab when starting obconf.
+  * debian/obconf.pod:
+   - Update with the new option.
+
+ -- Julien Lavergne <gilir@ubuntu.com>  Mon, 29 Nov 2010 00:11:42 +0100
+
+obconf (2.0.3-3build1) intrepid; urgency=low
+
+  * No-change rebuild against newer openbox-dev to restore
+    installability (LP: #243795).
+
+ -- Daniel T Chen <crimsun@ubuntu.com>  Sun, 27 Jul 2008 00:55:41 -0400
+
 obconf (2.0.3-3) unstable; urgency=low
 
   * Fix bashism in debian/rules (Closes: #484420).

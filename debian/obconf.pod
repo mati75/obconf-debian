@@ -32,6 +32,12 @@ Specify the path to the configuration file to use.
 
 Displays information about the currently installed version and exists.
 
+=item B<--tab <NUMBER>>
+
+Display the tab number NUMBER.
+
+=back
+
 =head1 BUGS
 
 Please report bugs at http://bugzilla.icculus.org.
