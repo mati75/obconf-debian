@@ -1,3 +1,10 @@
+obconf (2.0.3-2) unstable; urgency=low
+
+  * Remove build-deps on libobrender/parser16 as we build-depend
+    on oepnbox-dev and this prevents binNMUs.
+
+ -- Nico Golde <nion@debian.org>  Fri, 25 Apr 2008 19:52:31 +0200
+
 obconf (2.0.3-1) unstable; urgency=low
 
   * New upstream release (Closes: #463797).

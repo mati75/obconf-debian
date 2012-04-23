@@ -8,7 +8,7 @@ obconf [I<options>] [I<ARCHIVE.obt>]
 
 =head1 DESCRIPTION
 
-B< ObConf > is a preferences manager for Openbox (version 3.0 and up).
+B<ObConf> is a preferences manager for Openbox (version 3.0 and up).
 Its user interface is rather self-explanatory and thus does not need to
 be documented in this manual page.
 
