@@ -28,7 +28,8 @@ configure-stamp:
 	dh_testdir
 	# remove upstream debian/ stuff
 	-rm -f debian/changelog.in
-	ln -sf /usr/share/misc/config.{sub,guess} .
+	ln -sf /usr/share/misc/config.sub .
+	ln -sf /usr/share/misc/config.guess .
 	rm -f config.cache
 	./configure $(CONFIGFLAGS) CFLAGS="$(COMPILEFLAGS)" --prefix=/usr
 	touch $@
@@ -48,7 +49,8 @@ clean: unpatch
 	dh_testroot
 	dh_clean
 	[ ! -f Makefile ] || $(MAKE) distclean
-	rm -f config.{sub,guess}
+	rm -f config.sub
+	rm -f config.guess
 	rm -f obconf.1
 	rm -f build-stamp configure-stamp
 

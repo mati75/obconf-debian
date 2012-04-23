@@ -1,3 +1,9 @@
+obconf (2.0.3-3) unstable; urgency=low
+
+  * Fix bashism in debian/rules (Closes: #484420).
+
+ -- Nico Golde <nion@debian.org>  Wed, 04 Jun 2008 10:25:18 +0200
+
 obconf (2.0.3-2) unstable; urgency=low
 
   * Remove build-deps on libobrender/parser16 as we build-depend
