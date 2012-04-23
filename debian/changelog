@@ -1,0 +1,19 @@
+obconf (1.5-3) unstable; urgency=low
+
+  * debian/control:
+      - Bleh.  Really add build-dependency on libsm-dev,  Closes: #251594.
+
+ -- Tore Anderson <tore@debian.org>  Sun, 30 May 2004 17:42:40 +0200
+
+obconf (1.5-2) unstable; urgency=low
+
+  * debian/control:
+      - Add build-dependency on libsm-dev, closes: #251594.
+
+ -- Tore Anderson <tore@debian.org>  Sat, 29 May 2004 18:38:35 +0200
+
+obconf (1.5-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Tore Anderson <tore@debian.org>  Tue, 18 Nov 2003 22:20:16 +0100

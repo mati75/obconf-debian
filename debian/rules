@@ -1,0 +1,61 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=
+
+VERSION=$(shell awk '/^PACKAGE_VERSION/ { print $$2 }' "FS='" configure)
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	
+	./configure --prefix=/usr
+	touch configure-stamp
+
+build: build-stamp
+build-stamp: configure-stamp
+	dh_testdir
+	
+	$(MAKE)
+
+	pod2man --section=1 --release=$(VERSION) --center \
+		"Openbox documentation" debian/obconf.pod > obconf.1
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+	
+	-$(MAKE) distclean
+
+	rm -f obconf.1
+
+	rm -f build-stamp configure-stamp
+
+install: build-stamp
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/obconf/
+	
+binary-indep:
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installchangelogs
+	dh_installman
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_shlibdeps
+	dh_md5sums
+	dh_gencontrol
+	dh_installdeb
+	dh_builddeb
+
+binary: binary-indep binary-arch
+
+.PHONY: build clean binary-indep binary-arch binary install configure

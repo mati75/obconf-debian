@@ -1,0 +1,19 @@
+ObConf was first packaged for Debian by Tore Anderson <tore@debian.org>
+on the 15th November 2003.
+
+Homepage: <http://icculus.org/openbox/obconf/>.
+
+The main upstream authors are Ben Jansens <ben@openbox.org>
+and Tim Riley <tr@slackzone.org>.
+
+Copyright:
+
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the
+ Free Software Foundation; either version 2, or (at your option) any
+ later version.
+
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL'.
+
+This copyright also applies to the Debian-related build scripts.
