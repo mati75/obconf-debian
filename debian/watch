@@ -1,2 +1,2 @@
 version=3
-http://icculus.org/openbox/obconf (?:.*/)?obconf-?_?([\d+\.]+|\d+)\.tar.* debian uupdate
+http://www.openbox.org/dist/obconf/obconf\.(.*)\.tar\.gz
