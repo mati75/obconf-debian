@@ -1,3 +1,19 @@
+obconf (1.6-1) unstable; urgency=low
+
+  * New upstream version.
+  * Fixed typo in mainpage.
+    (Closes: bug#302754)
+  * Use of autotools-dev to update config.{guess,sub}.
+    (Closes: bug#342427)
+  * Changed Makefile.am to fix buttons and saving settings, thanks to
+    Richard Bradshaw.
+    (Closes: bug#375702)
+  * New maintainer.
+    (Closes: bug#385988)
+  * Upgraded to Standards-Version 3.7.2.
+
+ -- Jens Peter Secher <jps@debian.org>  Thu, 14 Sep 2006 21:43:58 +0200
+
 obconf (1.5-4) unstable; urgency=low
 
   * debian/control:
@@ -5,7 +21,7 @@ obconf (1.5-4) unstable; urgency=low
 
  -- Tore Anderson <tore@debian.org>  Mon,  4 Sep 2006 14:45:20 +0000
 
-obco nf (1.5-3) unstable; urgency=low
+obconf (1.5-3) unstable; urgency=low
 
   * debian/control:
       - Bleh.  Really add build-dependency on libsm-dev,  Closes: #251594.

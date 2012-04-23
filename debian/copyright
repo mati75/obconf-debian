@@ -1,19 +1,40 @@
 ObConf was first packaged for Debian by Tore Anderson <tore@debian.org>
-on the 15th November 2003.
+on the 15th November 2003.  Repackaged by Jens Peter Secher <jps@debian.org>.
 
-Homepage: <http://icculus.org/openbox/obconf/>.
+Homepage: <http://tr.openmonkey.com/pages/obconf/>.
 
-The main upstream authors are Ben Jansens <ben@openbox.org>
-and Tim Riley <tr@slackzone.org>.
+The upstream maintainers are Ben Jansens and Tim Riley.
 
-Copyright:
+The parts of ObConf is thus copyrighted:
 
- This program is free software; you can redistribute it and/or modify it
- under the terms of the GNU General Public License as published by the
- Free Software Foundation; either version 2, or (at your option) any
- later version.
+  tree.{c,h}  
+    Copyright (C) 2003 Ben Jansens
 
- On Debian GNU/Linux systems, the complete text of the GNU General
- Public License can be found in `/usr/share/common-licenses/GPL'.
+  gettext.h
+    Copyright (C) 1995-1998, 2000-2002 Free Software Foundation, Inc.
 
-This copyright also applies to the Debian-related build scripts.
+  (all others)
+    Copyright (C) 2003-2006  Ben Jansens, Tim Riley
+
+All parts of ObConf are under the following license:
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program (on Debian GNU/Linux systems you will find it
+  /usr/share/common-licenses/GPL) ; if not, write to the Free Software 
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, 
+  USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+

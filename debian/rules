@@ -1,52 +1,70 @@
 #!/usr/bin/make -f
 
-export DH_VERBOSE=
+# Use dpatch.
+include /usr/share/dpatch/dpatch.make
 
+# Extract the version of ObConf.
 VERSION=$(shell awk '/^PACKAGE_VERSION/ { print $$2 }' "FS='" configure)
 
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-	
-	./configure --prefix=/usr
-	touch configure-stamp
+# Detect cross compilation (works with autoconf >= 2.52).
+export DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+export DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+  CONFIGFLAGS += --build $(DEB_HOST_GNU_TYPE)
+else
+  CONFIGFLAGS += --build $(DEB_BUILD_GNU_TYPE) --host $(DEB_HOST_GNU_TYPE)
+endif
 
-build: build-stamp
+# Allow compilation without optimisation.
+COMPILEFLAGS=-g
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	COMPILEFLAGS += -O0
+else
+	COMPILEFLAGS += -O2
+endif
+
+
+configure-stamp: patch-stamp
+	dh_testdir
+	ln -sf /usr/share/misc/config.{sub,guess} .
+	rm -f config.cache
+	./configure $(CONFIGFLAGS) CFLAGS="$(COMPILEFLAGS)" --prefix=/usr
+	touch $@
+
 build-stamp: configure-stamp
 	dh_testdir
-	
 	$(MAKE)
-
 	pod2man --section=1 --release=$(VERSION) --center \
 		"Openbox documentation" debian/obconf.pod > obconf.1
-	touch build-stamp
+	touch $@
 
-clean:
+build: build-stamp
+
+clean-patched: configure
 	dh_testdir
 	dh_testroot
 	dh_clean
-	
 	-$(MAKE) distclean
-
+	-rm -f config.{sub,guess}
 	rm -f obconf.1
-
 	rm -f build-stamp configure-stamp
+
+clean: clean-patched unpatch
 
 install: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_clean
-
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/obconf/
-	
+
 binary-indep:
 
 binary-arch: install
 	dh_testdir
 	dh_testroot
-	dh_installdocs
+	dh_installdocs AUTHORS README TODO
 	dh_installchangelogs
-	dh_installman
+	dh_installman obconf.1
 	dh_strip
 	dh_compress
 	dh_fixperms
@@ -58,4 +76,4 @@ binary-arch: install
 
 binary: binary-indep binary-arch
 
-.PHONY: build clean binary-indep binary-arch binary install configure
+.PHONY: build clean clean-patched binary-indep binary-arch binary install
