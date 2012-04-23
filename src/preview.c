@@ -23,7 +23,7 @@
 
 #include <string.h>
 
-#include <openbox/theme.h>
+#include <obrender/theme.h>
 
 #define PADDING 2 /* openbox does it :/ */
 
@@ -327,28 +327,28 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             switch (*layout) {
             case 'D':
                 a = focus ?
-                    theme->a_focused_unpressed_desk :
-                    theme->a_unfocused_unpressed_desk;
+                    theme->btn_desk->a_focused_unpressed :
+                    theme->btn_desk->a_unfocused_unpressed;
                 break;
             case 'S':
                 a = focus ?
-                    theme->a_focused_unpressed_shade :
-                    theme->a_unfocused_unpressed_shade;
+                    theme->btn_shade->a_focused_unpressed :
+                    theme->btn_shade->a_unfocused_unpressed;
                 break;
             case 'I':
                 a = focus ?
-                    theme->a_focused_unpressed_iconify :
-                    theme->a_unfocused_unpressed_iconify;
+                    theme->btn_iconify->a_focused_unpressed :
+                    theme->btn_iconify->a_unfocused_unpressed;
                 break;
             case 'M':
                 a = focus ?
-                    theme->a_focused_unpressed_max :
-                    theme->a_unfocused_unpressed_max;
+                    theme->btn_max->a_focused_unpressed :
+                    theme->btn_max->a_unfocused_unpressed;
                 break;
             case 'C':
                 a = focus ?
-                    theme->a_focused_unpressed_close :
-                    theme->a_unfocused_unpressed_close;
+                    theme->btn_close->a_focused_unpressed :
+                    theme->btn_close->a_unfocused_unpressed;
                 break;
             default:
                 continue;
@@ -491,7 +491,8 @@ GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
                          RrFont *inactive_window_font,
                          RrFont *menu_title_font,
                          RrFont *menu_item_font,
-                         RrFont *osd_font)
+                         RrFont *osd_active_font,
+                         RrFont *osd_inactive_font)
 {
 
     GdkPixbuf *preview;
@@ -505,7 +506,8 @@ GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
 
     RrTheme *theme = RrThemeNew(rrinst, name, FALSE,
                                 active_window_font, inactive_window_font,
-                                menu_title_font, menu_item_font, osd_font);
+                                menu_title_font, menu_item_font,
+                                osd_active_font, osd_inactive_font);
     if (!theme)
         return NULL;
 
