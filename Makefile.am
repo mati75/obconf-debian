@@ -9,7 +9,7 @@ mimedir         = $(datadir)/mime
 mimepkgdir      = $(datadir)/mime/packages
 kdemimedir      = $(datadir)/mimelnk/application
 
-AUTOMAKE_OPTIONS = subdir-objects
+AUTOMAKE_OPTIONS = subdir-objects foreign
 ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = \
@@ -43,6 +43,8 @@ src_obconf_SOURCES = \
 	src/archive.h \
 	src/windows.c \
 	src/windows.h \
+	src/margins.c \
+	src/margins.h \
 	src/mouse.c \
 	src/mouse.h \
 	src/desktops.c \
@@ -63,7 +65,8 @@ src_obconf_SOURCES = \
 	src/tree.h
 
 dist_glade_DATA = \
-	src/obconf.glade
+	src/obconf.glade \
+	pixmaps/video-display.png
 
 dist_noinst_DATA = \
 	src/obconf.gladep
@@ -80,6 +83,7 @@ dist_kdemime_DATA = \
 EXTRA_DIST = \
 	config.rpath \
 	README \
+	CHANGELOG \
 	COPYING \
 	AUTHORS \
 	m4/codeset.m4 \
@@ -112,11 +116,7 @@ EXTRA_DIST = \
 	m4/wchar_t.m4 \
 	m4/wint_t.m4 \
 	m4/xsize.m4 \
-	debian/changelog.in \
-	debian/compat \
-	debian/control \
-	debian/menu \
-	debian/rules \
+	data/video-display.svg \
 	config.rpath
 
 # Packages need to run these...
