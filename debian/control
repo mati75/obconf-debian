@@ -3,7 +3,10 @@ Section: x11
 Priority: optional
 Maintainer: Debian LXDE Maintainers <lxde-debian@lists.lxde.org>
 Uploaders: Daniel Baumann <daniel@debian.org>
-Build-Depends: debhelper (>= 9), dh-autoreconf, gettext, openbox-dev (>= 3.5.0), libstartup-notification0-dev, libgtk2.0-dev, libglade2-dev, perl, libsm-dev, autopoint, libimlib2-dev
+Build-Depends:
+ debhelper (>= 9), dh-autoreconf, autopoint, gettext, libglade2-dev,
+ libgtk2.0-dev, libimlib2-dev, libsm-dev, libstartup-notification0-dev,
+ openbox-dev (>= 3.5.0), perl
 Standards-Version: 3.9.3
 Homepage: http://icculus.org/openbox/index.php/ObConf:About
 Vcs-Browser: http://git.lxde.org/gitweb/?p=debian/obconf.git
