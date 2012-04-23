@@ -1,7 +1,5 @@
 #!/usr/bin/make -f
 
-# Use dpatch.
-include /usr/share/dpatch/dpatch.make
 
 # Extract the version of ObConf.
 VERSION=$(shell awk '/^PACKAGE_VERSION/ { print $$2 }' "FS='" configure)
@@ -24,8 +22,10 @@ else
 endif
 
 
-configure-stamp: patch-stamp
+configure-stamp:
 	dh_testdir
+	# remove upstream debian/ stuff
+	-rm -f debian/changelog.in
 	ln -sf /usr/share/misc/config.{sub,guess} .
 	rm -f config.cache
 	./configure $(CONFIGFLAGS) CFLAGS="$(COMPILEFLAGS)" --prefix=/usr
@@ -40,16 +40,15 @@ build-stamp: configure-stamp
 
 build: build-stamp
 
-clean-patched: configure
+
+clean:
 	dh_testdir
 	dh_testroot
 	dh_clean
-	-$(MAKE) distclean
-	-rm -f config.{sub,guess}
+	[ ! -f Makefile ] || $(MAKE) distclean
+	rm -f config.{sub,guess}
 	rm -f obconf.1
 	rm -f build-stamp configure-stamp
-
-clean: clean-patched unpatch
 
 install: build-stamp
 	dh_testdir
@@ -65,6 +64,7 @@ binary-arch: install
 	dh_installdocs AUTHORS README TODO
 	dh_installchangelogs
 	dh_installman obconf.1
+	dh_installmenu
 	dh_strip
 	dh_compress
 	dh_fixperms
@@ -76,4 +76,4 @@ binary-arch: install
 
 binary: binary-indep binary-arch
 
-.PHONY: build clean clean-patched binary-indep binary-arch binary install
+.PHONY: build clean binary-indep binary-arch binary install

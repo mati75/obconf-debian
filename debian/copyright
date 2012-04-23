@@ -1,13 +1,15 @@
 ObConf was first packaged for Debian by Tore Anderson <tore@debian.org>
 on the 15th November 2003.  Repackaged by Jens Peter Secher <jps@debian.org>.
+The package is now maintained by Nico Golde <nion@debian.org> and
+Anibal Avelar (Fixxxer) <aavelar@cofradia.org>
 
-Homepage: <http://tr.openmonkey.com/pages/obconf/>.
+The source code was downloaded from: http://tr.openmonkey.com/pages/obconf/
 
 The upstream maintainers are Ben Jansens and Tim Riley.
 
 The parts of ObConf is thus copyrighted:
 
-  tree.{c,h}  
+  tree.{c,h}
     Copyright (C) 2003 Ben Jansens
 
   gettext.h
@@ -36,5 +38,3 @@ All parts of ObConf are under the following license:
 
 On Debian GNU/Linux systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
-
-
