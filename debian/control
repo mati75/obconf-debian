@@ -14,7 +14,7 @@ Vcs-Git: git://git.lxde.org/git/debian/obconf.git
 
 Package: obconf
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Recommends: openbox
 Description: preferences manager for Openbox window manager
  ObConf is a small graphical utility which configures the window manager
