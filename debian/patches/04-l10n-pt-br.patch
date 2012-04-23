@@ -1,11 +1,10 @@
-Description: Brazilian Portuguese translation
 Author: Sérgio Cipolla <secipolla@gmail.com>
+Description: Brazilian Portuguese translation.
 
-Index: obconf-2.0.3+git20110808/obconf.desktop
-===================================================================
---- obconf-2.0.3+git20110808.orig/obconf.desktop	2011-12-15 22:42:40.519546845 +0100
-+++ obconf-2.0.3+git20110808/obconf.desktop	2011-12-15 22:56:18.499571919 +0100
-@@ -6,11 +6,13 @@
+diff -Naurp obconf.orig/obconf.desktop obconf/obconf.desktop
+--- obconf.orig/obconf.desktop	2012-04-23 07:04:35.906733630 +0200
++++ obconf/obconf.desktop	2012-04-23 07:05:32.927109789 +0200
+@@ -6,11 +6,13 @@ Name[ca]=Gestor de configuració de l'Op
  Name[de]=Openbox Konfiguration Manager
  Name[es]=Gestor de configuración de Openbox
  Name[zh_TW]=Openbox 組態管理器
@@ -19,11 +18,10 @@ Index: obconf-2.0.3+git20110808/obconf.desktop
  Icon=obconf
  Exec=obconf %f
  Categories=Settings;DesktopSettings;GTK;
-Index: obconf-2.0.3+git20110808/po/pt_BR.po
-===================================================================
---- obconf-2.0.3+git20110808.orig/po/pt_BR.po	2011-08-05 18:05:10.000000000 +0200
-+++ obconf-2.0.3+git20110808/po/pt_BR.po	2011-12-15 22:54:25.395568442 +0100
-@@ -7,571 +7,532 @@
+diff -Naurp obconf.orig/po/pt_BR.po obconf/po/pt_BR.po
+--- obconf.orig/po/pt_BR.po	2012-04-23 06:49:15.332632342 +0200
++++ obconf/po/pt_BR.po	2012-04-23 07:05:32.931110003 +0200
+@@ -7,571 +7,532 @@ msgid ""
  msgstr ""
  "Project-Id-Version: ObConf 2.0.4\n"
  "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
@@ -990,7 +988,7 @@ Index: obconf-2.0.3+git20110808/po/pt_BR.po
  msgid ""
  "\n"
  "Options:\n"
-@@ -579,33 +540,32 @@
+@@ -579,33 +540,32 @@ msgstr ""
  "\n"
  "Opções:\n"
  
@@ -1039,7 +1037,7 @@ Index: obconf-2.0.3+git20110808/po/pt_BR.po
  #, c-format
  msgid ""
  "\n"
-@@ -613,73 +573,72 @@
+@@ -613,73 +573,72 @@ msgid ""
  "\n"
  msgstr ""
  "\n"
@@ -1144,7 +1142,7 @@ Index: obconf-2.0.3+git20110808/po/pt_BR.po
  #, c-format
  msgid ""
  "Unable to create the theme archive \"%s\".\n"
-@@ -690,41 +649,79 @@
+@@ -690,41 +649,79 @@ msgstr ""
  "Os seguintes erros foram relatados:\n"
  "%s"
  
