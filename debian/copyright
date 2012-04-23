@@ -5,18 +5,43 @@ Anibal Avelar (Fixxxer) <aavelar@cofradia.org>
 
 The source code was downloaded from: http://icculus.org/openbox/index.php/Openbox:Download
 
-The upstream maintainers are Ben Jansens and Tim Riley.
+The upstream maintainers are:
+    Dana Jansens <danakj@orodu.net>
+    Tim Riley <tr@slackzone.org>
+    Javeed Shaikh <syscrash2k@gmail.com>.
 
-The parts of ObConf is thus copyrighted:
+The icon was created by Myles Green <rmg57@telus.net>.
 
-  tree.{c,h}
-    Copyright (C) 2003 Ben Jansens
+Copyright for the parts of ObConf:
 
   gettext.h
     Copyright (C) 1995-1998, 2000-2002 Free Software Foundation, Inc.
 
-  (all others)
-    Copyright (C) 2003-2006  Ben Jansens, Tim Riley
+  Obconf source code:
+  appearance.{c,h}, desktops.{c,h}, dock.{c,h}, margins.{c,h}, theme.{c,h}, windows.h
+    Copyright (C) 2003 Tim Riley
+    Copyright (C) 2003-2007 Dana Jansens
+
+  main.c, moveresize.{c,h}, windows.c
+    Copyright (C) 2003 Tim Riley
+    Copyright (C) 2003-2008 Dana Jansens
+
+  main.h, tree.h
+    Copyright (C) 2003 Dana Jansens
+
+  preview.c
+    Copyright (C) 2007 Javeed Shaikh
+    Copyright (C) 2007 Dana Jansens
+
+  preview.h
+    Copyright (C) 2007 Javeed Shaikh
+
+  tree.c
+    Copyright (C) 2003-2007 Dana Jansens
+
+  (any other file)
+    Copyright (C) 2003-2008 Dana Jansens, Tim Riley, Javeed Shaikh
+
 
 All parts of ObConf are under the following license:
 
@@ -32,8 +57,8 @@ All parts of ObConf are under the following license:
 
   You should have received a copy of the GNU General Public License
   along with this program (on Debian GNU/Linux systems you will find it
-  /usr/share/common-licenses/GPL) ; if not, write to the Free Software 
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, 
+  /usr/share/common-licenses/GPL) ; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301,
   USA.
 
 On Debian GNU/Linux systems, the complete text of the GNU General

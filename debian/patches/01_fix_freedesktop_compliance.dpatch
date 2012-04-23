@@ -1,26 +1,49 @@
 #! /bin/sh /usr/share/dpatch/dpatch-run
 ## 01_fix_freedesktop_compliance.dpatch by Nico Golde <nion@debian.org>
+## and Siegfried-Angel Gevatter <rainct@ubuntu.com>.
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
+## DP: - Fix some validation problems with the .desktop files
+## DP: - Add Catalan, German and Spanish translations to obconf.desktop.
 
 @DPATCH@
-diff -urNad obconf-2.0.2~/obconf.desktop obconf-2.0.2/obconf.desktop
---- obconf-2.0.2~/obconf.desktop	2007-07-12 18:24:52.000000000 +0200
-+++ obconf-2.0.2/obconf.desktop	2007-08-06 16:40:25.000000000 +0200
-@@ -1,5 +1,4 @@
+diff -urNad obconf-2.0.3~/obconf.desktop obconf-2.0.3/obconf.desktop
+--- obconf-2.0.3~/obconf.desktop	2008-01-26 07:25:09.000000000 +0100
++++ obconf-2.0.3/obconf.desktop	2008-02-03 14:02:25.000000000 +0100
+@@ -1,13 +1,19 @@
  [Desktop Entry]
 -Encoding=UTF-8
++Version=1.0
  Type=Application
  Name=Openbox Configuration Manager
- Comment=Openbox configuration manager
-diff -urNad obconf-2.0.2~/x-openbox-theme.desktop obconf-2.0.2/x-openbox-theme.desktop
---- obconf-2.0.2~/x-openbox-theme.desktop	2007-07-12 18:24:52.000000000 +0200
-+++ obconf-2.0.2/x-openbox-theme.desktop	2007-08-06 16:40:15.000000000 +0200
-@@ -1,5 +1,5 @@
++Name[ca]=Gestor de configuració de l'Openbox
++Name[de]=Openbox Konfiguration Manager
++Name[es]=Gestor de configuración de Openbox
+ Name[zh_TW]=Openbox 組態管理器
+-Comment=Openbox configuration manager
++Comment=Configure and personalize the Openbox window manager
++Comment[ca]=Configureu i personalitzeu el gestor de finestres Openbox
++Comment[de]=Konfiguriert den Openbox Window Manager
++Comment[es]=Configura i personaliza el gestor de ventanas Openbox
+ Comment[zh_TW]=管理 Openbox 組態設定
+ Icon=obconf
+ Exec=obconf %f
+ Categories=Settings;DesktopSettings;GTK;
+-MimeType=application/x-openbox-theme
++MimeType=application/x-openbox-theme;
+ StartupNotify=true
+ Terminal=false
+diff -urNad obconf-2.0.3~/x-openbox-theme.desktop obconf-2.0.3/x-openbox-theme.desktop
+--- obconf-2.0.3~/x-openbox-theme.desktop	2008-01-11 19:22:11.000000000 +0100
++++ obconf-2.0.3/x-openbox-theme.desktop	2008-02-03 14:03:25.000000000 +0100
+@@ -1,7 +1,8 @@
  [Desktop Entry]
 -Encoding=UTF-8
-+Name=Openbox Theme Archive
++Version=1.0
  Type=MimeType
- MimeType=application/x-openbox-theme
+-MimeType=application/x-openbox-theme
++Name=Openbox Theme Archive
++MimeType=application/x-openbox-theme;
  Icon=openbox
+ Patterns=*.obt;
+ Comment=Openbox Theme Archive

@@ -4,20 +4,46 @@ ObConf - configuration utility for Openbox.
 
 =head1 SYNOPSIS
 
-obconf
+obconf [I<options>] [I<ARCHIVE.obt>]
 
 =head1 DESCRIPTION
 
-B<< ObConf >> is a preferences manager for Openbox (version 3.0 and up).
+B< ObConf > is a preferences manager for Openbox (version 3.0 and up).
 Its user interface is rather self-explanatory and thus does not need to
 be documented in this manual page.
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--install I<ARCHIVE.obt>>
+
+Installs the given theme archive and selects it.
+
+=item B<--archive I<THEME>>
+
+Create a theme archive from the given theme directory.
+
+=item B<--config-file I<FILE>>
+
+Specify the path to the configuration file to use.
+
+=item B<--version>
+
+Displays information about the currently installed version and exists.
+
+=head1 BUGS
+
+Please report bugs at http://bugzilla.icculus.org.
+
 
 =head1 AUTHORS
 
 ObConf was written by Ben Jansens <ben@openbox.org>, and Tim Riley
-<tr@slackzone.org>.
+<tr@slackzone.org> and Javeed Shaikh <syscrash2k@gmail.com>.
 
-This manual page was written by Tore Anderson <tore@debian.org>.
+This manual page was written by Tore Anderson <tore@debian.org> and
+updated by Siegfried-Angel Gevatter <rainct@ubuntu.com>.
 
 =head1 COPYRIGHT
 

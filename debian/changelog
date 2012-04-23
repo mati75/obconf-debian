@@ -1,3 +1,15 @@
+obconf (2.0.3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #463797).
+  * debian/copyright: Update copyright years and upstream authors.
+  * Adding obconf xpm image and set it as menu icon.
+  * debian/obconf.pod: Update obconf manual.
+  * 01_fix_freedesktop_compliance.dpatch: fix some more validation
+    issues and add Catalan, German and Spanish translations.
+  * Many thanks to Siegfried-Angel Gevatter!
+
+ -- Nico Golde <nion@debian.org>  Sun, 03 Feb 2008 15:06:08 +0100
+
 obconf (2.0.2-2) unstable; urgency=low
 
   [Nico Golde]
