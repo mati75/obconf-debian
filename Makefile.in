@@ -40,17 +40,18 @@ host_triplet = @host@
 bin_PROGRAMS = src/obconf$(EXEEXT)
 DIST_COMMON = README $(am__configure_deps) $(dist_desktop_DATA) \
 	$(dist_glade_DATA) $(dist_kdemime_DATA) $(dist_mimepkg_DATA) \
-	$(dist_noinst_DATA) $(srcdir)/Makefile.am \
+	$(dist_noinst_DATA) $(dist_pixmap_DATA) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in $(top_srcdir)/configure ABOUT-NLS \
-	AUTHORS COPYING INSTALL NEWS TODO compile config.guess \
-	config.rpath config.sub depcomp install-sh missing
+	AUTHORS COPYING NEWS TODO compile config.guess config.rpath \
+	config.sub depcomp install-sh missing
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
-	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/lib-ld.m4 \
-	$(top_srcdir)/m4/lib-link.m4 $(top_srcdir)/m4/lib-prefix.m4 \
-	$(top_srcdir)/m4/nls.m4 $(top_srcdir)/m4/po.m4 \
-	$(top_srcdir)/m4/progtest.m4 $(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/m4/exportdynamic.m4 \
+	$(top_srcdir)/m4/gettext.m4 $(top_srcdir)/m4/iconv.m4 \
+	$(top_srcdir)/m4/lib-ld.m4 $(top_srcdir)/m4/lib-link.m4 \
+	$(top_srcdir)/m4/lib-prefix.m4 $(top_srcdir)/m4/nls.m4 \
+	$(top_srcdir)/m4/po.m4 $(top_srcdir)/m4/progtest.m4 \
+	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
@@ -59,13 +60,14 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" \
 	"$(DESTDIR)$(gladedir)" "$(DESTDIR)$(kdemimedir)" \
-	"$(DESTDIR)$(mimepkgdir)"
+	"$(DESTDIR)$(mimepkgdir)" "$(DESTDIR)$(pixmapdir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_src_obconf_OBJECTS = src/src_obconf-about.$(OBJEXT) \
 	src/src_obconf-archive.$(OBJEXT) \
 	src/src_obconf-windows.$(OBJEXT) \
+	src/src_obconf-moveresize.$(OBJEXT) \
 	src/src_obconf-margins.$(OBJEXT) \
 	src/src_obconf-mouse.$(OBJEXT) \
 	src/src_obconf-desktops.$(OBJEXT) \
@@ -104,8 +106,9 @@ dist_desktopDATA_INSTALL = $(INSTALL_DATA)
 dist_gladeDATA_INSTALL = $(INSTALL_DATA)
 dist_kdemimeDATA_INSTALL = $(INSTALL_DATA)
 dist_mimepkgDATA_INSTALL = $(INSTALL_DATA)
+dist_pixmapDATA_INSTALL = $(INSTALL_DATA)
 DATA = $(dist_desktop_DATA) $(dist_glade_DATA) $(dist_kdemime_DATA) \
-	$(dist_mimepkg_DATA) $(dist_noinst_DATA)
+	$(dist_mimepkg_DATA) $(dist_noinst_DATA) $(dist_pixmap_DATA)
 ETAGS = etags
 CTAGS = ctags
 DIST_SUBDIRS = $(SUBDIRS)
@@ -139,6 +142,7 @@ ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
 EXEEXT = @EXEEXT@
+EXPORT_DYNAMIC_FLAGS = @EXPORT_DYNAMIC_FLAGS@
 GDK_PIXBUF_CFLAGS = @GDK_PIXBUF_CFLAGS@
 GDK_PIXBUF_LIBS = @GDK_PIXBUF_LIBS@
 GLADE_CFLAGS = @GLADE_CFLAGS@
@@ -272,6 +276,8 @@ src_obconf_SOURCES = \
 	src/archive.h \
 	src/windows.c \
 	src/windows.h \
+	src/moveresize.c \
+	src/moveresize.h \
 	src/margins.c \
 	src/margins.h \
 	src/mouse.c \
@@ -308,6 +314,9 @@ dist_mimepkg_DATA = \
 
 dist_kdemime_DATA = \
 	x-openbox-theme.desktop
+
+dist_pixmap_DATA = \
+	data/obconf.png
 
 EXTRA_DIST = \
 	config.rpath \
@@ -420,6 +429,8 @@ src/src_obconf-archive.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/src_obconf-windows.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
+src/src_obconf-moveresize.$(OBJEXT): src/$(am__dirstamp) \
+	src/$(DEPDIR)/$(am__dirstamp)
 src/src_obconf-margins.$(OBJEXT): src/$(am__dirstamp) \
 	src/$(DEPDIR)/$(am__dirstamp)
 src/src_obconf-mouse.$(OBJEXT): src/$(am__dirstamp) \
@@ -454,6 +465,7 @@ mostlyclean-compile:
 	-rm -f src/src_obconf-main.$(OBJEXT)
 	-rm -f src/src_obconf-margins.$(OBJEXT)
 	-rm -f src/src_obconf-mouse.$(OBJEXT)
+	-rm -f src/src_obconf-moveresize.$(OBJEXT)
 	-rm -f src/src_obconf-preview.$(OBJEXT)
 	-rm -f src/src_obconf-preview_update.$(OBJEXT)
 	-rm -f src/src_obconf-theme.$(OBJEXT)
@@ -471,6 +483,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-margins.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-mouse.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-moveresize.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-preview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-preview_update.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/src_obconf-theme.Po@am__quote@
@@ -534,6 +547,20 @@ src/src_obconf-windows.obj: src/windows.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/windows.c' object='src/src_obconf-windows.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/src_obconf-windows.obj `if test -f 'src/windows.c'; then $(CYGPATH_W) 'src/windows.c'; else $(CYGPATH_W) '$(srcdir)/src/windows.c'; fi`
+
+src/src_obconf-moveresize.o: src/moveresize.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/src_obconf-moveresize.o -MD -MP -MF "src/$(DEPDIR)/src_obconf-moveresize.Tpo" -c -o src/src_obconf-moveresize.o `test -f 'src/moveresize.c' || echo '$(srcdir)/'`src/moveresize.c; \
+@am__fastdepCC_TRUE@	then mv -f "src/$(DEPDIR)/src_obconf-moveresize.Tpo" "src/$(DEPDIR)/src_obconf-moveresize.Po"; else rm -f "src/$(DEPDIR)/src_obconf-moveresize.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/moveresize.c' object='src/src_obconf-moveresize.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/src_obconf-moveresize.o `test -f 'src/moveresize.c' || echo '$(srcdir)/'`src/moveresize.c
+
+src/src_obconf-moveresize.obj: src/moveresize.c
+@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/src_obconf-moveresize.obj -MD -MP -MF "src/$(DEPDIR)/src_obconf-moveresize.Tpo" -c -o src/src_obconf-moveresize.obj `if test -f 'src/moveresize.c'; then $(CYGPATH_W) 'src/moveresize.c'; else $(CYGPATH_W) '$(srcdir)/src/moveresize.c'; fi`; \
+@am__fastdepCC_TRUE@	then mv -f "src/$(DEPDIR)/src_obconf-moveresize.Tpo" "src/$(DEPDIR)/src_obconf-moveresize.Po"; else rm -f "src/$(DEPDIR)/src_obconf-moveresize.Tpo"; exit 1; fi
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='src/moveresize.c' object='src/src_obconf-moveresize.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/src_obconf-moveresize.obj `if test -f 'src/moveresize.c'; then $(CYGPATH_W) 'src/moveresize.c'; else $(CYGPATH_W) '$(srcdir)/src/moveresize.c'; fi`
 
 src/src_obconf-margins.o: src/margins.c
 @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(src_obconf_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/src_obconf-margins.o -MD -MP -MF "src/$(DEPDIR)/src_obconf-margins.Tpo" -c -o src/src_obconf-margins.o `test -f 'src/margins.c' || echo '$(srcdir)/'`src/margins.c; \
@@ -742,6 +769,23 @@ uninstall-dist_mimepkgDATA:
 	  f=$(am__strip_dir) \
 	  echo " rm -f '$(DESTDIR)$(mimepkgdir)/$$f'"; \
 	  rm -f "$(DESTDIR)$(mimepkgdir)/$$f"; \
+	done
+install-dist_pixmapDATA: $(dist_pixmap_DATA)
+	@$(NORMAL_INSTALL)
+	test -z "$(pixmapdir)" || $(mkdir_p) "$(DESTDIR)$(pixmapdir)"
+	@list='$(dist_pixmap_DATA)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f=$(am__strip_dir) \
+	  echo " $(dist_pixmapDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pixmapdir)/$$f'"; \
+	  $(dist_pixmapDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pixmapdir)/$$f"; \
+	done
+
+uninstall-dist_pixmapDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_pixmap_DATA)'; for p in $$list; do \
+	  f=$(am__strip_dir) \
+	  echo " rm -f '$(DESTDIR)$(pixmapdir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(pixmapdir)/$$f"; \
 	done
 
 # This directory's subdirectories are mostly independent; you can cd
@@ -1023,7 +1067,7 @@ check: check-recursive
 all-am: Makefile $(PROGRAMS) $(DATA)
 installdirs: installdirs-recursive
 installdirs-am:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(gladedir)" "$(DESTDIR)$(kdemimedir)" "$(DESTDIR)$(mimepkgdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(gladedir)" "$(DESTDIR)$(kdemimedir)" "$(DESTDIR)$(mimepkgdir)" "$(DESTDIR)$(pixmapdir)"; do \
 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
 	done
 install: install-recursive
@@ -1074,7 +1118,8 @@ info: info-recursive
 info-am:
 
 install-data-am: install-dist_desktopDATA install-dist_gladeDATA \
-	install-dist_kdemimeDATA install-dist_mimepkgDATA
+	install-dist_kdemimeDATA install-dist_mimepkgDATA \
+	install-dist_pixmapDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 
@@ -1107,7 +1152,8 @@ ps-am:
 
 uninstall-am: uninstall-binPROGRAMS uninstall-dist_desktopDATA \
 	uninstall-dist_gladeDATA uninstall-dist_kdemimeDATA \
-	uninstall-dist_mimepkgDATA uninstall-info-am
+	uninstall-dist_mimepkgDATA uninstall-dist_pixmapDATA \
+	uninstall-info-am
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) uninstall-hook
 
@@ -1123,16 +1169,17 @@ uninstall-info: uninstall-info-recursive
 	install-binPROGRAMS install-data install-data-am \
 	install-data-hook install-dist_desktopDATA \
 	install-dist_gladeDATA install-dist_kdemimeDATA \
-	install-dist_mimepkgDATA install-exec install-exec-am \
-	install-info install-info-am install-man install-strip \
-	installcheck installcheck-am installdirs installdirs-am \
-	maintainer-clean maintainer-clean-generic \
+	install-dist_mimepkgDATA install-dist_pixmapDATA install-exec \
+	install-exec-am install-info install-info-am install-man \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am maintainer-clean maintainer-clean-generic \
 	maintainer-clean-recursive mostlyclean mostlyclean-compile \
 	mostlyclean-generic mostlyclean-recursive pdf pdf-am ps ps-am \
 	tags tags-recursive uninstall uninstall-am \
 	uninstall-binPROGRAMS uninstall-dist_desktopDATA \
 	uninstall-dist_gladeDATA uninstall-dist_kdemimeDATA \
-	uninstall-dist_mimepkgDATA uninstall-hook uninstall-info-am
+	uninstall-dist_mimepkgDATA uninstall-dist_pixmapDATA \
+	uninstall-hook uninstall-info-am
 
 
 # Packages need to run these...

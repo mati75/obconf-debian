@@ -91,19 +91,26 @@ static gboolean update_theme_preview_iterate(gpointer data)
     gchar *name;
 
     if (restart_theme_preview_update) {
-        if (!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(ls), &iter))
+        /* get the first iterator position if there is such a thing */
+        if (!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(ls), &iter)) {
+            /* nothing to show */
+            obconf_show_main();
             return FALSE;
+        }
         restart_theme_preview_update = FALSE;
     } else {
+        /* get the next iterator position if there is such a thing */
         if (!gtk_tree_model_iter_next(GTK_TREE_MODEL(ls), &iter)) {
             GtkTreePath *path;
 
             restart_theme_preview_update = TRUE;
 
             gtk_tree_view_get_cursor(tree_view, &path, NULL);
-            gtk_tree_view_scroll_to_cell(tree_view, path, NULL,
-                                         FALSE, 0, 0);
-            gtk_tree_path_free(path);
+            if (path) {
+                gtk_tree_view_scroll_to_cell(tree_view, path, NULL,
+                                             FALSE, 0, 0);
+                gtk_tree_path_free(path);
+            }
 
             obconf_show_main();
 
