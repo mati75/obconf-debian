@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: obconf 2.0.2\n"
+"Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-02 11:51-0500\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
 "PO-Revision-Date: 2007-07-22 15:36+0200\n"
 "Last-Translator: Cyrille Bagard <nocbos@gmail.com>\n"
 "Language-Team: French\n"
@@ -27,9 +27,9 @@ msgstr "<span weight=\"bold\">Thème</span>"
 #: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
 #: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
 #: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:148
-#: src/strings.c:151 src/strings.c:157 src/strings.c:162 src/strings.c:164
-#: src/strings.c:167
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
 msgid "    "
 msgstr "    "
 
@@ -90,6 +90,10 @@ msgid ""
 "I:\n"
 "M:"
 msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
 
 #: src/strings.c:32
 msgid ""
@@ -98,6 +102,10 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
+"Icône de fenêtre\n"
+"Etiquette de fenêtre (titre)\n"
+"Iconifier (minimiser)\n"
+"Maximiser"
 
 #: src/strings.c:36
 msgid ""
@@ -105,6 +113,9 @@ msgid ""
 "S:\n"
 "D:"
 msgstr ""
+"C:\n"
+"S:\n"
+"D:"
 
 #: src/strings.c:39
 msgid ""
@@ -112,6 +123,9 @@ msgid ""
 "Shade (Roll up)\n"
 "Omnipresent (On all desktops)"
 msgstr ""
+"Fermer\n"
+"Dérouler\n"
+"Omniprésent (sur tous les bureaux)"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -163,19 +177,19 @@ msgstr "_Centrer les nouvelles fenêtres quand elles sont placées"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr ""
+msgstr "Placer de préférence les n_ouvelles fenêtres sur :"
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr ""
+msgstr "Tous les écrans"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr ""
+msgstr "L'écran actif"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "L'écran avec la souris"
 
 #: src/strings.c:61
 msgid "Windows"
@@ -210,23 +224,25 @@ msgstr "Force de résistance contre les b_ords de l'écran :"
 #: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr ""
+"Ba_sculer d'un bureau à un autre quand une fenêtre déplacée dépasse le bord "
+"de l'écran."
 
 #: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
-msgstr ""
+msgstr "Temps à _attendre avant le basculement :"
 
 #: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:166 src/strings.c:169
+#: src/strings.c:169 src/strings.c:172
 msgid "ms"
 msgstr "ms"
 
 #: src/strings.c:75
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Boîte d'information</span>"
 
 #: src/strings.c:76
 msgid "Show _information dialog:"
-msgstr ""
+msgstr "Afficher la boîte d'_information :"
 
 #: src/strings.c:77
 msgid "When resizing terminal windows"
@@ -242,7 +258,7 @@ msgstr "Jamais"
 
 #: src/strings.c:81
 msgid "Information dialog's _position:"
-msgstr ""
+msgstr "_Position de la boîte d'information :"
 
 #: src/strings.c:82
 msgid "Centered on the window"
@@ -254,31 +270,39 @@ msgstr "Au-dessus de la fenêtre"
 
 #: src/strings.c:84
 msgid "Fixed position on screen"
-msgstr ""
+msgstr "Position fixe à l'écran"
 
 #: src/strings.c:86
 msgid "Fixed _x position:"
-msgstr ""
+msgstr "Position _x fixée :"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "Centered"
-msgstr ""
+msgstr "Centré"
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:88
 msgid "From left edge"
-msgstr ""
+msgstr "Depuis le bord gauche"
 
-#: src/strings.c:89 src/strings.c:94
+#: src/strings.c:89
 msgid "From right edge"
-msgstr ""
+msgstr "Depuis le bord droit"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
-msgstr ""
+msgstr "Position _y fixée :"
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr "Depuis le bord supérieur"
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr "Depuis le bord inférieur"
 
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr ""
+msgstr "Déplacer et redimensionner"
 
 #: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -331,11 +355,11 @@ msgstr "<span weight=\"bold\">Bureaux</span>"
 
 #: src/strings.c:117
 msgid "_Show a notification when switching desktops"
-msgstr ""
+msgstr "Afficher une notification lor_s du changement de bureau"
 
 #: src/strings.c:119
 msgid "_Amount of time to show the notification for:"
-msgstr ""
+msgstr "Délai pour montrer la notific_ation :"
 
 #: src/strings.c:121
 msgid "_Number of desktops: "
@@ -384,138 +408,157 @@ msgid "Margins"
 msgstr "Marges"
 
 #: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=\"bold\">Dock</span>"
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+"Le dock est un conteneur spécial pour les \"dockapps\", ou les applications "
+"dockables. Il n'est pas visible à l'écran jusqu'à ce qu'une telle "
+"application soit lancée.  Les applications dockables peuvent être utilisées "
+"pour afficher des choses comme une horloge, ou pour vous fournir un systray."
+
+#: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Position</span>"
 
-#: src/strings.c:138
+#: src/strings.c:141
 msgid "_Position:"
 msgstr "_Position :"
 
-#: src/strings.c:139
+#: src/strings.c:142
 msgid "Top Left"
 msgstr "En haut à gauche"
 
-#: src/strings.c:140
+#: src/strings.c:143
 msgid "Top"
 msgstr "En haut"
 
-#: src/strings.c:141
+#: src/strings.c:144
 msgid "Top Right"
 msgstr "En haut à droite"
 
-#: src/strings.c:142
+#: src/strings.c:145
 msgid "Left"
 msgstr "A gauche"
 
-#: src/strings.c:143
+#: src/strings.c:146
 msgid "Right"
 msgstr "A droite"
 
-#: src/strings.c:144
+#: src/strings.c:147
 msgid "Bottom Left"
 msgstr "En bas à gauche"
 
-#: src/strings.c:145
+#: src/strings.c:148
 msgid "Bottom"
 msgstr "En bas"
 
-#: src/strings.c:146
+#: src/strings.c:149
 msgid "Bottom Right"
 msgstr "En bas à droite"
 
-#: src/strings.c:147
+#: src/strings.c:150
 msgid "Floating"
 msgstr "Flottante"
 
-#: src/strings.c:149
+#: src/strings.c:152
 msgid "_Floating position:"
 msgstr "Position _flottante :"
 
-#: src/strings.c:150
+#: src/strings.c:153
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:152
+#: src/strings.c:155
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Permettre aux fenêtres d'être placées dans la _zone de Dock"
 
-#: src/strings.c:153
+#: src/strings.c:156
 msgid "_Orientation: "
 msgstr "_Orientation :"
 
-#: src/strings.c:154
+#: src/strings.c:157
 msgid "Vertical"
 msgstr "Verticale"
 
-#: src/strings.c:155
+#: src/strings.c:158
 msgid "Horizontal"
 msgstr "Horizontale"
 
-#: src/strings.c:156
+#: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Emplilement</span>"
 
-#: src/strings.c:158
+#: src/strings.c:161
 msgid "Keep dock _above other windows"
 msgstr "Garder les Docks au-dess_us des autres fenêtres"
 
-#: src/strings.c:159
+#: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
 msgstr "Autoriser les Docks à être en-dessous _et au-dessus des fenêtres"
 
-#: src/strings.c:160
+#: src/strings.c:163
 msgid "Keep dock _below other windows"
 msgstr "Garder les Docks en-des_sous des autres fenêtres"
 
-#: src/strings.c:161
+#: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Dissimulation</span>"
 
-#: src/strings.c:163
+#: src/strings.c:166
 msgid "_Hide off screen"
 msgstr "Cac_her de l'écran"
 
-#: src/strings.c:165
+#: src/strings.c:168
 msgid "_Delay before hiding:"
 msgstr "_Délai avant de cacher :"
 
-#: src/strings.c:168
+#: src/strings.c:171
 msgid "Delay before _showing:"
 msgstr "Délai avant de _montrer :"
 
-#: src/strings.c:170
+#: src/strings.c:173
 msgid "Dock"
 msgstr "Dock"
 
-#: src/strings.c:171
+#: src/strings.c:174
 msgid "Abo_ut"
 msgstr "_A propos"
 
-#: src/strings.c:172
+#: src/strings.c:175
 msgid "About ObConf"
 msgstr "A propos d'ObConf"
 
-#: src/strings.c:173
+#: src/strings.c:176
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:174
+#: src/strings.c:177
 msgid "A preferences manager for Openbox"
 msgstr "Un gestionnaire de préférences pour Openbox"
 
-#: src/strings.c:175
+#: src/strings.c:178
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:179
+#: src/strings.c:182
 msgid "window1"
 msgstr "window1"
 
-#: src/strings.c:180
+#: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr ""
 "<span weight=\"bold\">Pressez la touche que vous souhaitez attacher...</span>"
@@ -561,6 +604,8 @@ msgstr ""
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
+"  --config-file FILE    Spécifie le chemin du fichier de configuration à "
+"utiliser\n"
 
 #: src/main.c:94
 #, c-format
@@ -582,21 +627,24 @@ msgid "--archive requires an argument\n"
 msgstr "--archive requiert un argument\n"
 
 #: src/main.c:122
-#, fuzzy
 msgid "--config-file requires an argument\n"
-msgstr "--archive requiert un argument\n"
+msgstr "--config-file requiert un argument\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
+"Echec du chargement du fichier d'interface obconf.glade. Vous n'avez "
+"probablement pas installé ObConf correctement."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
+"Echec du chargement d'un fichier rc.xml. Vous n'avez probablement pas "
+"installé ObConf correctement."
 
 #: src/main.c:243
 #, c-format
@@ -606,6 +654,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Echec lors de l'analyse du fichier de configuration d'Openbox.  Votre "
+"fichier de configuration n'est pas de l'XML valide.\n"
+"\n"
+"Message : %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
