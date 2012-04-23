@@ -1,1 +1,1 @@
-debian/obconf.xpm	usr/share/pixmaps/
+debian/pixmaps/*	/usr/share/pixmaps
