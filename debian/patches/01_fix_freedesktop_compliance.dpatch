@@ -1,0 +1,26 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_fix_freedesktop_compliance.dpatch by Nico Golde <nion@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad obconf-2.0.2~/obconf.desktop obconf-2.0.2/obconf.desktop
+--- obconf-2.0.2~/obconf.desktop	2007-07-12 18:24:52.000000000 +0200
++++ obconf-2.0.2/obconf.desktop	2007-08-06 16:40:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Name=Openbox Configuration Manager
+ Comment=Openbox configuration manager
+diff -urNad obconf-2.0.2~/x-openbox-theme.desktop obconf-2.0.2/x-openbox-theme.desktop
+--- obconf-2.0.2~/x-openbox-theme.desktop	2007-07-12 18:24:52.000000000 +0200
++++ obconf-2.0.2/x-openbox-theme.desktop	2007-08-06 16:40:15.000000000 +0200
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-Encoding=UTF-8
++Name=Openbox Theme Archive
+ Type=MimeType
+ MimeType=application/x-openbox-theme
+ Icon=openbox

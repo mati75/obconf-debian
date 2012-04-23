@@ -4,6 +4,8 @@
 # Extract the version of ObConf.
 VERSION=$(shell awk '/^PACKAGE_VERSION/ { print $$2 }' "FS='" configure)
 
+include /usr/share/dpatch/dpatch.make
+
 # Detect cross compilation (works with autoconf >= 2.52).
 export DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
 export DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
@@ -31,7 +33,7 @@ configure-stamp:
 	./configure $(CONFIGFLAGS) CFLAGS="$(COMPILEFLAGS)" --prefix=/usr
 	touch $@
 
-build-stamp: configure-stamp
+build-stamp: configure-stamp patch-stamp
 	dh_testdir
 	$(MAKE)
 	pod2man --section=1 --release=$(VERSION) --center \
@@ -41,7 +43,7 @@ build-stamp: configure-stamp
 build: build-stamp
 
 
-clean:
+clean: unpatch
 	dh_testdir
 	dh_testroot
 	dh_clean
@@ -54,7 +56,9 @@ install: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_clean
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/obconf/
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/obconf
+	# don't install the TODO file since it is empty
+	rm -f $(CURDIR)/debian/obconf/usr/share/doc/obconf/TODO
 
 binary-indep:
 

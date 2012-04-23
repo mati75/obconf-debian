@@ -1,3 +1,21 @@
+obconf (2.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Now depend on libobrender16 and libobparser16.
+  * Added a watch file again.
+  * Change source code URL in copyright.
+  * Added compat file since upstream removed debian/.
+  * Added build-dep on dpatch and added patch to fix
+    freedesktop compliance of .desktop file.
+
+ -- Nico Golde <nion@debian.org>  Mon, 06 Aug 2007 15:49:25 +0200
+
+obconf (2.0.1-2) unstable; urgency=low
+
+  * Added openbox to Recommends (Closes: #436056).
+
+ -- Nico Golde <nion@debian.org>  Sun, 05 Aug 2007 14:22:24 +0200
+
 obconf (2.0.1-1) unstable; urgency=low
 
   [Anibal Avelar]
