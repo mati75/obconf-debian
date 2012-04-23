@@ -1,4 +1,11 @@
-obconf (1.5-3) unstable; urgency=low
+obconf (1.5-4) unstable; urgency=low
+
+  * debian/control:
+      - Orphaning the package.
+
+ -- Tore Anderson <tore@debian.org>  Mon,  4 Sep 2006 14:45:20 +0000
+
+obco nf (1.5-3) unstable; urgency=low
 
   * debian/control:
       - Bleh.  Really add build-dependency on libsm-dev,  Closes: #251594.

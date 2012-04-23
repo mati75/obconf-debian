@@ -1,7 +1,7 @@
 Source: obconf
 Section: x11
 Priority: optional
-Maintainer: Tore Anderson <tore@debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: debhelper (>= 4.1.45), gettext, openbox (>= 3.0), libstartup-notification0-dev, libgtk2.0-dev, libglade2-dev, perl, libsm-dev
 Standards-Version: 3.6.1
 
