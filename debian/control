@@ -2,6 +2,7 @@ Source: obconf
 Section: x11
 Priority: optional
 Maintainer: Debian LXDE Maintainers <lxde-debian@lists.lxde.org>
+Uploaders: Daniel Baumann <daniel@debian.org>
 Build-Depends: debhelper (>= 8~), dh-autoreconf, gettext, openbox-dev (>= 3.5.0), libstartup-notification0-dev, libgtk2.0-dev, libglade2-dev, perl, libsm-dev, autopoint, libimlib2-dev
 Standards-Version: 3.9.2
 Homepage: http://icculus.org/openbox/index.php/ObConf:About
