@@ -1,4 +1,4 @@
 01-freedesktop-compliance.patch
-show_specific_tab.dpatch
+02-show-specific-tab.patch
 revert_new_button_layout.patch
 pt_BR.patch

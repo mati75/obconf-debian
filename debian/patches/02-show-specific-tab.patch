@@ -1,10 +1,9 @@
-Description:  Add an option to show a specific tab when starting obconf
 Authors: Julien Lavergne <gilir@ubuntu.com>
+Description: Add an option to show a specific tab when starting obconf.
 
-Index: obconf-2.0.3+git20110808/src/main.c
-===================================================================
---- obconf-2.0.3+git20110808.orig/src/main.c	2011-08-05 18:05:10.000000000 +0200
-+++ obconf-2.0.3+git20110808/src/main.c	2011-12-15 22:38:34.579539315 +0100
+diff -Naurp obconf.orig/src/main.c obconf/src/main.c
+--- obconf.orig/src/main.c	2012-04-23 06:49:15.292632085 +0200
++++ obconf/src/main.c	2012-04-23 07:04:57.146874674 +0200
 @@ -36,6 +36,7 @@
  #include <stdlib.h>
  
@@ -13,7 +12,7 @@ Index: obconf-2.0.3+git20110808/src/main.c
  
  GladeXML *glade;
  xmlDocPtr doc;
-@@ -44,6 +45,7 @@
+@@ -44,6 +45,7 @@ RrInstance *rrinst;
  gchar *obc_config_file = NULL;
  ObtPaths *paths;
  ObtXmlInst *parse_i;
@@ -21,7 +20,7 @@ Index: obconf-2.0.3+git20110808/src/main.c
  
  static gchar *obc_theme_install = NULL;
  static gchar *obc_theme_archive = NULL;
-@@ -93,6 +95,7 @@
+@@ -93,6 +95,7 @@ static void print_help()
      g_print(_("  --install ARCHIVE.obt Install the given theme archive and select it\n"));
      g_print(_("  --archive THEME       Create a theme archive from the given theme directory\n"));
      g_print(_("  --config-file FILE    Specify the path to the config file to use\n"));
@@ -29,7 +28,7 @@ Index: obconf-2.0.3+git20110808/src/main.c
      g_print(_("\nPlease report bugs at %s\n\n"), PACKAGE_BUGREPORT);
      
      exit(EXIT_SUCCESS);
-@@ -124,6 +127,12 @@
+@@ -124,6 +127,12 @@ static void parse_args(int argc, char **
                  g_printerr(_("--config-file requires an argument\n"));
              else
                  obc_config_file = argv[++i];
@@ -42,7 +41,7 @@ Index: obconf-2.0.3+git20110808/src/main.c
          } else
              obc_theme_install = argv[i];
      }
-@@ -282,6 +291,7 @@
+@@ -282,6 +291,7 @@ int main(int argc, char **argv)
          dock_setup_tab();
  
          mainwin = get_widget("main_window");
@@ -50,7 +49,7 @@ Index: obconf-2.0.3+git20110808/src/main.c
  
          if (obc_theme_install)
              theme_install(obc_theme_install);
-@@ -329,6 +339,11 @@
+@@ -329,6 +339,11 @@ void obconf_show_main()
  
      gtk_widget_show_all(mainwin);
  
