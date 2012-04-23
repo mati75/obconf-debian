@@ -1,7 +1,8 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
-   main.h for ObConf, the configuration tool for Openbox
-   Copyright (c) 2003        Dana Jansens
+   windows.h for ObConf, the configuration tool for Openbox
+   Copyright (c) 2003-2008   Dana Jansens
+   Copyright (c) 2003        Tim Riley
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -16,26 +17,9 @@
    See the COPYING file for a copy of the GNU General Public License.
 */
 
-#ifndef obconf__main_h
-#define obconf__main_h
+#ifndef obconf__moveresize_h
+#define obconf__moveresize_h
 
-#include <openbox/render.h>
-#include <openbox/instance.h>
-#include <openbox/parse.h>
-
-#include <gtk/gtk.h>
-#include <glade/glade-xml.h>
-
-extern GladeXML *glade;
-extern xmlDocPtr doc;
-extern xmlNodePtr root;
-extern RrInstance *rrinst;
-extern GtkWidget *mainwin;
-extern gchar *obc_config_file;
-
-#define get_widget(s) glade_xml_get_widget(glade, s)
-
-void obconf_error(gchar *msg, gboolean model);
-void obconf_show_main();
+void moveresize_setup_tab();
 
 #endif

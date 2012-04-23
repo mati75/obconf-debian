@@ -1,5 +1,5 @@
 AC_PREREQ([2.54])
-AC_INIT([obconf], [2.0.2], [http://bugzilla.icculus.org])
+AC_INIT([obconf], [2.0.3], [http://bugzilla.icculus.org])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/main.c])
 
@@ -13,7 +13,8 @@ AC_C_INLINE
 
 AC_PROG_INSTALL
 
-LDFLAGS="$LDFLAGS -export-dynamic"
+CHECK_EXPORT_DYNAMIC
+LDFLAGS="$LDFLAGS $EXPORT_DYNAMIC_FLAGS"
 
 ALL_LINGUAS=""
 AM_GNU_GETTEXT_VERSION(0.15)
@@ -62,5 +63,3 @@ AC_OUTPUT
 
 AC_MSG_RESULT
 AC_MSG_RESULT([configure complete, now type \"make\"])
-
-

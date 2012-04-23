@@ -43,6 +43,8 @@ src_obconf_SOURCES = \
 	src/archive.h \
 	src/windows.c \
 	src/windows.h \
+	src/moveresize.c \
+	src/moveresize.h \
 	src/margins.c \
 	src/margins.h \
 	src/mouse.c \
@@ -79,6 +81,9 @@ dist_mimepkg_DATA = \
 
 dist_kdemime_DATA = \
 	x-openbox-theme.desktop
+
+dist_pixmap_DATA = \
+	data/obconf.png
 
 EXTRA_DIST = \
 	config.rpath \
