@@ -1,3 +1,20 @@
+obconf (1:2.0.4-1) unstable; urgency=low
+
+  * New upstream release: (Closes: #725018, #726270)
+    + Fix emits a lot of noise on stderr (Closes: #615102),
+    + Fix cannot change window title to condensed fonts (Closes: #651767).
+  * debian/control:
+    + add myself as maintainer,
+    + remove Daniel Baumann from uploaders (Closes: #704353),
+    + bump standard version,
+    + bump minimal openbox version,
+    + update vcs pools.
+  * Remove old debian/patches -- all included upstream.
+  * Add debian/patches/update_desktop.patch.
+  * Update debian/watch.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Tue, 15 Oct 2013 12:43:04 +0200
+
 obconf (1:2.0.3+20110805+debian-1) unstable; urgency=low
 
   * Merging upstream version 2.0.3+20110805+debian.

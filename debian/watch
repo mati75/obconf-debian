@@ -1,2 +1,2 @@
 version=3
-http://www.openbox.org/dist/obconf/obconf\.(.*)\.tar\.gz
+http://www.openbox.org/dist/obconf/obconf-(.+)\.tar\.gz
