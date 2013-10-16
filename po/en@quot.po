@@ -1,0 +1,796 @@
+# English translations for obconf package.
+# Copyright (C) 2013 Dana Jansens
+# This file is distributed under the same license as the obconf package.
+# Automatically generated, 2013.
+#
+# All this catalog "translates" are quotation characters.
+# The msgids must be ASCII and therefore cannot contain real quotation
+# characters, only substitutes like grave accent (0x60), apostrophe (0x27)
+# and double quote (0x22). These substitutes look strange; see
+# http://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html
+#
+# This catalog translates grave accent (0x60) and apostrophe (0x27) to
+# left single quotation mark (U+2018) and right single quotation mark (U+2019).
+# It also translates pairs of apostrophe (0x27) to
+# left single quotation mark (U+2018) and right single quotation mark (U+2019)
+# and pairs of quotation mark (0x22) to
+# left double quotation mark (U+201C) and right double quotation mark (U+201D).
+#
+# When output to an UTF-8 terminal, the quotation characters appear perfectly.
+# When output to an ISO-8859-1 terminal, the single quotation marks are
+# transliterated to apostrophes (by iconv in glibc 2.2 or newer) or to
+# grave/acute accent (by libiconv), and the double quotation marks are
+# transliterated to 0x22.
+# When output to an ASCII terminal, the single quotation marks are
+# transliterated to apostrophes, and the double quotation marks are
+# transliterated to 0x22.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: obconf 2.0.4\n"
+"Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
+"POT-Creation-Date: 2013-08-11 20:49-0400\n"
+"PO-Revision-Date: 2013-08-11 20:49-0400\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/strings.c:7
+msgid "Openbox Configuration Manager"
+msgstr "Openbox Configuration Manager"
+
+#: src/strings.c:8
+msgid "<span weight=\"bold\">Theme</span>"
+msgstr "<span weight=“bold”>Theme</span>"
+
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
+#: src/strings.c:43 src/strings.c:52 src/strings.c:55 src/strings.c:63
+#: src/strings.c:69 src/strings.c:73 src/strings.c:82 src/strings.c:90
+#: src/strings.c:95 src/strings.c:108 src/strings.c:110 src/strings.c:117
+#: src/strings.c:123 src/strings.c:126 src/strings.c:128 src/strings.c:135
+#: src/strings.c:147 src/strings.c:150 src/strings.c:161 src/strings.c:164
+#: src/strings.c:170 src/strings.c:175 src/strings.c:177 src/strings.c:180
+msgid "    "
+msgstr "    "
+
+#: src/strings.c:10
+msgid "_Install a new theme..."
+msgstr "_Install a new theme..."
+
+#: src/strings.c:11
+msgid "Create a theme _archive (.obt)..."
+msgstr "Create a theme _archive (.obt)..."
+
+#: src/strings.c:12
+msgid "Theme"
+msgstr "Theme"
+
+#: src/strings.c:13
+msgid "<span weight=\"bold\">Windows</span>"
+msgstr "<span weight=“bold”>Windows</span>"
+
+#: src/strings.c:15
+msgid "_Windows retain a border when undecorated"
+msgstr "_Windows retain a border when undecorated"
+
+#: src/strings.c:16
+msgid "A_nimate iconify and restore"
+msgstr "A_nimate iconify and restore"
+
+#: src/strings.c:17
+msgid "<span weight=\"bold\">Window Titles</span>"
+msgstr "<span weight=“bold”>Window Titles</span>"
+
+#: src/strings.c:19
+msgid "_Button order:"
+msgstr "_Button order:"
+
+#: src/strings.c:20
+msgid ""
+"N - The window's icon\n"
+"D - The all-desktops (sticky) button\n"
+"S - The shade (roll up) button\n"
+"L - The label (window title)\n"
+"I - The iconify (minimize) button\n"
+"M - The maximize button\n"
+"C - The close button"
+msgstr ""
+"N - The window's icon\n"
+"D - The all-desktops (sticky) button\n"
+"S - The shade (roll up) button\n"
+"L - The label (window title)\n"
+"I - The iconify (minimize) button\n"
+"M - The maximize button\n"
+"C - The close button"
+
+#: src/strings.c:28
+msgid ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+
+#: src/strings.c:32
+msgid ""
+"Window icon\n"
+"Window label (Title)\n"
+"Iconify (Minimize)\n"
+"Maximize"
+msgstr ""
+"Window icon\n"
+"Window label (Title)\n"
+"Iconify (Minimize)\n"
+"Maximize"
+
+#: src/strings.c:36
+msgid ""
+"C:\n"
+"S:\n"
+"D:"
+msgstr ""
+"C:\n"
+"S:\n"
+"D:"
+
+#: src/strings.c:39
+msgid ""
+"Close\n"
+"Shade (Roll up)\n"
+"Omnipresent (On all desktops)"
+msgstr ""
+"Close\n"
+"Shade (Roll up)\n"
+"Omnipresent (On all desktops)"
+
+#: src/strings.c:42
+msgid "<span weight=\"bold\">Fonts</span>"
+msgstr "<span weight=“bold”>Fonts</span>"
+
+#: src/strings.c:44
+msgid "_Active window title: "
+msgstr "_Active window title: "
+
+#: src/strings.c:45
+msgid "_Inactive window title: "
+msgstr "_Inactive window title: "
+
+#: src/strings.c:46
+msgid "Menu _header: "
+msgstr "Menu _header: "
+
+#: src/strings.c:47
+msgid "_Menu Item: "
+msgstr "_Menu Item: "
+
+#: src/strings.c:48
+msgid "Active _On-screen display: "
+msgstr "Active _On-screen display: "
+
+#: src/strings.c:49
+msgid "Inactive O_n-screen display: "
+msgstr "Inactive O_n-screen display: "
+
+#: src/strings.c:50
+msgid "Appearance"
+msgstr "Appearance"
+
+#: src/strings.c:51 src/strings.c:107
+msgid "<span weight=\"bold\">Focusing Windows</span>"
+msgstr "<span weight=“bold”>Focusing Windows</span>"
+
+#: src/strings.c:53
+msgid "Focus _new windows when they appear"
+msgstr "Focus _new windows when they appear"
+
+#: src/strings.c:54
+msgid "<span weight=\"bold\">Placing Windows</span>"
+msgstr "<span weight=“bold”>Placing Windows</span>"
+
+#: src/strings.c:56
+msgid "_Place new windows under the mouse pointer"
+msgstr "_Place new windows under the mouse pointer"
+
+#: src/strings.c:57
+msgid "_Center new windows when they are placed"
+msgstr "_Center new windows when they are placed"
+
+#: src/strings.c:58
+msgid "Prefer to place new windows _on:"
+msgstr "Prefer to place new windows _on:"
+
+#: src/strings.c:59
+msgid "All monitors"
+msgstr "All monitors"
+
+#: src/strings.c:60
+msgid "The active monitor"
+msgstr "The active monitor"
+
+#: src/strings.c:61
+msgid "The monitor with the mouse"
+msgstr "The monitor with the mouse"
+
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Primary Monitor</span>"
+msgstr "<span weight=“bold”>Primary Monitor</span>"
+
+#: src/strings.c:64
+msgid ""
+"The primary monitor is where Openbox will place dialogs, such as the one "
+"used for cycling windows."
+msgstr ""
+"The primary monitor is where Openbox will place dialogs, such as the one "
+"used for cycling windows."
+
+#: src/strings.c:65
+msgid "Primary _monitor:"
+msgstr "Primary _monitor:"
+
+#: src/strings.c:66
+msgid "Fixed Monitor"
+msgstr "Fixed Monitor"
+
+#: src/strings.c:67
+msgid "Active Monitor"
+msgstr "Active Monitor"
+
+#: src/strings.c:68
+msgid "Monitor With Mouse Pointer"
+msgstr "Monitor With Mouse Pointer"
+
+#: src/strings.c:70
+msgid "_Fixed monitor:"
+msgstr "_Fixed monitor:"
+
+#: src/strings.c:71
+msgid "Windows"
+msgstr "Windows"
+
+#: src/strings.c:72
+msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
+msgstr "<span weight=“bold”>Moving and Resizing Windows</span>"
+
+#: src/strings.c:74
+msgid "Update the window contents while _resizing"
+msgstr "Update the window contents while _resizing"
+
+#: src/strings.c:75
+msgid "Drag _threshold distance:"
+msgstr "Drag _threshold distance:"
+
+#: src/strings.c:76 src/strings.c:78 src/strings.c:80 src/strings.c:100
+#: src/strings.c:105 src/strings.c:138 src/strings.c:140 src/strings.c:142
+#: src/strings.c:144
+msgid "px"
+msgstr "px"
+
+#: src/strings.c:77
+msgid "Amount of resistance against other _windows:"
+msgstr "Amount of resistance against other _windows:"
+
+#: src/strings.c:79
+msgid "Amount of resistance against screen _edges:"
+msgstr "Amount of resistance against screen _edges:"
+
+#: src/strings.c:81
+msgid "_Switch desktops when moving a window past the screen edge"
+msgstr "_Switch desktops when moving a window past the screen edge"
+
+#: src/strings.c:83
+msgid "_Amount of time to wait before switching:"
+msgstr "_Amount of time to wait before switching:"
+
+#: src/strings.c:84 src/strings.c:115 src/strings.c:122 src/strings.c:130
+#: src/strings.c:179 src/strings.c:182
+msgid "ms"
+msgstr "ms"
+
+#: src/strings.c:85
+msgid "<span weight=\"bold\">Information Dialog</span>"
+msgstr "<span weight=“bold”>Information Dialog</span>"
+
+#: src/strings.c:86
+msgid "Show _information dialog:"
+msgstr "Show _information dialog:"
+
+#: src/strings.c:87
+msgid "When resizing terminal windows"
+msgstr "When resizing terminal windows"
+
+#: src/strings.c:88
+msgid "Always"
+msgstr "Always"
+
+#: src/strings.c:89
+msgid "Never"
+msgstr "Never"
+
+#: src/strings.c:91
+msgid "Information dialog's _position:"
+msgstr "Information dialog's _position:"
+
+#: src/strings.c:92
+msgid "Centered on the window"
+msgstr "Centered on the window"
+
+#: src/strings.c:93
+msgid "Above the window"
+msgstr "Above the window"
+
+#: src/strings.c:94
+msgid "Fixed position on screen"
+msgstr "Fixed position on screen"
+
+#: src/strings.c:96
+msgid "Fixed _x position:"
+msgstr "Fixed _x position:"
+
+#: src/strings.c:97 src/strings.c:102
+msgid "Centered"
+msgstr "Centered"
+
+#: src/strings.c:98
+msgid "From left edge"
+msgstr "From left edge"
+
+#: src/strings.c:99
+msgid "From right edge"
+msgstr "From right edge"
+
+#: src/strings.c:101
+msgid "Fixed _y position:"
+msgstr "Fixed _y position:"
+
+#: src/strings.c:103
+msgid "From top edge"
+msgstr "From top edge"
+
+#: src/strings.c:104
+msgid "From bottom edge"
+msgstr "From bottom edge"
+
+#: src/strings.c:106
+msgid "Move & Resize"
+msgstr "Move & Resize"
+
+#: src/strings.c:109
+msgid "_Focus windows when the mouse pointer moves over them"
+msgstr "_Focus windows when the mouse pointer moves over them"
+
+#: src/strings.c:111
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "Move focus under the mouse when _switching desktops"
+
+#: src/strings.c:112
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr "Move focus _under the mouse when the mouse is not moving"
+
+#: src/strings.c:113
+msgid "_Raise windows when the mouse pointer moves over them"
+msgstr "_Raise windows when the mouse pointer moves over them"
+
+#: src/strings.c:114
+msgid "_Delay before focusing and raising windows:"
+msgstr "_Delay before focusing and raising windows:"
+
+#: src/strings.c:116
+msgid "<span weight=\"bold\">Titlebar</span>"
+msgstr "<span weight=“bold”>Titlebar</span>"
+
+#: src/strings.c:118
+msgid "Double click on the _titlebar:"
+msgstr "Double click on the _titlebar:"
+
+#: src/strings.c:119
+msgid "Maximizes the window"
+msgstr "Maximizes the window"
+
+#: src/strings.c:120
+msgid "Shades the window"
+msgstr "Shades the window"
+
+#: src/strings.c:121
+msgid "Double click ti_me:"
+msgstr "Double click ti_me:"
+
+#: src/strings.c:124
+msgid "Mouse"
+msgstr "Mouse"
+
+#: src/strings.c:125
+msgid "<span weight=\"bold\">Desktops</span>"
+msgstr "<span weight=“bold”>Desktops</span>"
+
+#: src/strings.c:127
+msgid "_Show a notification when switching desktops"
+msgstr "_Show a notification when switching desktops"
+
+#: src/strings.c:129
+msgid "_Amount of time to show the notification for:"
+msgstr "_Amount of time to show the notification for:"
+
+#: src/strings.c:131
+msgid "_Number of desktops: "
+msgstr "_Number of desktops: "
+
+#: src/strings.c:132
+msgid "_Desktop names:"
+msgstr "_Desktop names:"
+
+#: src/strings.c:133
+msgid "Desktops"
+msgstr "Desktops"
+
+#: src/strings.c:134
+msgid "<span weight=\"bold\">Desktop Margins</span>"
+msgstr "<span weight=“bold”>Desktop Margins</span>"
+
+#: src/strings.c:136
+msgid ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+msgstr ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+
+#: src/strings.c:137
+msgid "_Top"
+msgstr "_Top"
+
+#: src/strings.c:139
+msgid "_Left"
+msgstr "_Left"
+
+#: src/strings.c:141
+msgid "_Right"
+msgstr "_Right"
+
+#: src/strings.c:143
+msgid "_Bottom"
+msgstr "_Bottom"
+
+#: src/strings.c:145
+msgid "Margins"
+msgstr "Margins"
+
+#: src/strings.c:146
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=“bold”>Dock</span>"
+
+#: src/strings.c:148
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+"The dock is a special container for “dockapps”, or dock applications.  It is "
+"not visible on screen until a dockapp is run.  Dockapps can be used to show "
+"things like a clock, or to provide you with a system tray."
+
+#: src/strings.c:149
+msgid "<span weight=\"bold\">Position</span>"
+msgstr "<span weight=“bold”>Position</span>"
+
+#: src/strings.c:151
+msgid "_Position:"
+msgstr "_Position:"
+
+#: src/strings.c:152
+msgid "Top Left"
+msgstr "Top Left"
+
+#: src/strings.c:153
+msgid "Top"
+msgstr "Top"
+
+#: src/strings.c:154
+msgid "Top Right"
+msgstr "Top Right"
+
+#: src/strings.c:155
+msgid "Left"
+msgstr "Left"
+
+#: src/strings.c:156
+msgid "Right"
+msgstr "Right"
+
+#: src/strings.c:157
+msgid "Bottom Left"
+msgstr "Bottom Left"
+
+#: src/strings.c:158
+msgid "Bottom"
+msgstr "Bottom"
+
+#: src/strings.c:159
+msgid "Bottom Right"
+msgstr "Bottom Right"
+
+#: src/strings.c:160
+msgid "Floating"
+msgstr "Floating"
+
+#: src/strings.c:162
+msgid "_Floating position:"
+msgstr "_Floating position:"
+
+#: src/strings.c:163
+msgid "x"
+msgstr "x"
+
+#: src/strings.c:165
+msgid "Allow _windows to be placed within the dock's area"
+msgstr "Allow _windows to be placed within the dock's area"
+
+#: src/strings.c:166
+msgid "_Orientation: "
+msgstr "_Orientation: "
+
+#: src/strings.c:167
+msgid "Vertical"
+msgstr "Vertical"
+
+#: src/strings.c:168
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: src/strings.c:169
+msgid "<span weight=\"bold\">Stacking</span>"
+msgstr "<span weight=“bold”>Stacking</span>"
+
+#: src/strings.c:171
+msgid "Keep dock _above other windows"
+msgstr "Keep dock _above other windows"
+
+#: src/strings.c:172
+msgid "A_llow dock to be both above and below windows"
+msgstr "A_llow dock to be both above and below windows"
+
+#: src/strings.c:173
+msgid "Keep dock _below other windows"
+msgstr "Keep dock _below other windows"
+
+#: src/strings.c:174
+msgid "<span weight=\"bold\">Hiding</span>"
+msgstr "<span weight=“bold”>Hiding</span>"
+
+#: src/strings.c:176
+msgid "_Hide off screen"
+msgstr "_Hide off screen"
+
+#: src/strings.c:178
+msgid "_Delay before hiding:"
+msgstr "_Delay before hiding:"
+
+#: src/strings.c:181
+msgid "Delay before _showing:"
+msgstr "Delay before _showing:"
+
+#: src/strings.c:183
+msgid "Dock"
+msgstr "Dock"
+
+#: src/strings.c:184
+msgid "Abo_ut"
+msgstr "Abo_ut"
+
+#: src/strings.c:185
+msgid "About ObConf"
+msgstr "About ObConf"
+
+#: src/strings.c:186
+msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+msgstr "<span weight=“bold” size=“xx-large”>ObConf VERSION</span>"
+
+#: src/strings.c:187
+msgid "A preferences manager for Openbox"
+msgstr "A preferences manager for Openbox"
+
+#: src/strings.c:188
+msgid ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+msgstr ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+
+#: src/strings.c:192
+msgid "window1"
+msgstr "window1"
+
+#: src/strings.c:193
+msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
+msgstr "<span weight=“bold”>Press the key you wish to bind...</span>"
+
+#: src/main.c:62
+msgid "ObConf Error"
+msgstr "ObConf Error"
+
+#: src/main.c:76 src/main.c:78 src/main.c:80
+msgid "Copyright (c)"
+msgstr "Copyright (c)"
+
+#: src/main.c:91
+msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
+msgstr "Syntax: obconf [options] [ARCHIVE.obt]\n"
+
+#: src/main.c:92
+msgid ""
+"\n"
+"Options:\n"
+msgstr ""
+"\n"
+"Options:\n"
+
+#: src/main.c:93
+msgid "  --help                Display this help and exit\n"
+msgstr "  --help                Display this help and exit\n"
+
+#: src/main.c:94
+msgid "  --version             Display the version and exit\n"
+msgstr "  --version             Display the version and exit\n"
+
+#: src/main.c:95
+msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+msgstr ""
+"  --install ARCHIVE.obt Install the given theme archive and select it\n"
+
+#: src/main.c:96
+msgid ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+msgstr ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+
+#: src/main.c:97
+msgid "  --config-file FILE    Specify the path to the config file to use\n"
+msgstr "  --config-file FILE    Specify the path to the config file to use\n"
+
+#: src/main.c:98
+msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+msgstr "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+
+#: src/main.c:99
+#, c-format
+msgid ""
+"\n"
+"Please report bugs at %s\n"
+"\n"
+msgstr ""
+"\n"
+"Please report bugs at %s\n"
+"\n"
+
+#: src/main.c:115
+msgid "--install requires an argument\n"
+msgstr "--install requires an argument\n"
+
+#: src/main.c:121
+msgid "--archive requires an argument\n"
+msgstr "--archive requires an argument\n"
+
+#: src/main.c:127
+msgid "--config-file requires an argument\n"
+msgstr "--config-file requires an argument\n"
+
+#: src/main.c:133
+msgid "--tab requires an argument\n"
+msgstr "--tab requires an argument\n"
+
+#: src/main.c:225
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+
+#: src/main.c:251
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+
+#: src/main.c:264
+#, c-format
+msgid ""
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
+"\n"
+"Message: %s"
+msgstr ""
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
+"\n"
+"Message: %s"
+
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
+msgid "(Unnamed desktop)"
+msgstr "(Unnamed desktop)"
+
+#: src/theme.c:109 src/theme.c:141
+msgid "Choose an Openbox theme"
+msgstr "Choose an Openbox theme"
+
+#: src/theme.c:118
+msgid "Openbox theme archives"
+msgstr "Openbox theme archives"
+
+#: src/archive.c:40
+#, c-format
+msgid "\"%s\" was installed to %s"
+msgstr "“%s” was installed to %s"
+
+#: src/archive.c:65
+#, c-format
+msgid "\"%s\" was successfully created"
+msgstr "“%s” was successfully created"
+
+#: src/archive.c:101
+#, c-format
+msgid ""
+"Unable to create the theme archive \"%s\".\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+"Unable to create the theme archive “%s”.\n"
+"The following errors were reported:\n"
+"%s"
+
+#: src/archive.c:106 src/archive.c:202
+#, c-format
+msgid "Unable to run the \"tar\" command: %s"
+msgstr "Unable to run the “tar” command: %s"
+
+#: src/archive.c:126
+#, c-format
+msgid "Unable to create directory \"%s\": %s"
+msgstr "Unable to create directory “%s”: %s"
+
+#: src/archive.c:148
+#, c-format
+msgid "\"%s\" does not appear to be a valid Openbox theme directory"
+msgstr "“%s” does not appear to be a valid Openbox theme directory"
+
+#: src/archive.c:158
+#, c-format
+msgid "Unable to move to directory \"%s\": %s"
+msgstr "Unable to move to directory “%s”: %s"
+
+#: src/archive.c:209
+#, c-format
+msgid ""
+"Unable to extract the file \"%s\".\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox "
+"theme archive.\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+"Unable to extract the file “%s”.\n"
+"Please ensure that “%s” is writable and that the file is a valid Openbox "
+"theme archive.\n"
+"The following errors were reported:\n"
+"%s"
+
+#: src/mouse.c:72
+msgid "Custom actions"
+msgstr "Custom actions"
