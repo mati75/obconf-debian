@@ -8,4 +8,14 @@ Author: Mateusz Łukasik <mati75@linuxmint.pl>
 -Encoding=UTF-8
  Type=Application
  Name=Openbox Configuration Manager
- Name[pt_BR]=Gerenciador de configurações do Openbox
+ Name[pt]=Gestor de configurações do openbox
+@@ -17,7 +16,7 @@ Comment[pt_BR]=Configure as opções do
+ Comment[ru]=Настройка Openbox
+ Comment[zh_TW]=管理 Openbox 組態設定
+ Icon=obconf
+-Exec=obconf %f
++Exec=obconf
+ Categories=Settings;DesktopSettings;GTK;
+ MimeType=application/x-openbox-theme;
+ StartupNotify=true
+
