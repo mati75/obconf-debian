@@ -1,3 +1,11 @@
+obconf (1:2.0.4-2) UNRELEASED; urgency=low
+
+  * Patch working:
+    + update_desktop.patch replacement by 01-freedesktop-compliance.patch
+    from Ubuntu. (LP: #1249717)
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Mon, 11 Nov 2013 00:27:04 +0100
+
 obconf (1:2.0.4-1) unstable; urgency=low
 
   * New upstream release:
