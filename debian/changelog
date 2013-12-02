@@ -1,3 +1,10 @@
+obconf (1:2.0.4+git20130908-2) experimental; urgency=low
+
+  * Synchronized with unstable.
+  * Update debian/patches/01-freedesktop-compliance.patch.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 15 Nov 2013 13:05:26 +0100
+
 obconf (1:2.0.4+git20130908-1) experimental; urgency=low
 
   * Merge upstream version 2.0.4+git20130908: (LP: #1218221)
@@ -7,6 +14,14 @@ obconf (1:2.0.4+git20130908-1) experimental; urgency=low
   * Upload to experimental.
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Tue, 29 Oct 2013 16:39:08 +0100
+
+obconf (1:2.0.4-2) unstable; urgency=low
+
+  * Patch working:
+    + replace update_desktop.patch with 01-freedesktop-compliance.patch
+      from Ubuntu. (LP: #1249717)
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Mon, 11 Nov 2013 00:49:03 +0100
 
 obconf (1:2.0.4-1) unstable; urgency=low
 
