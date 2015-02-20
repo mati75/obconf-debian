@@ -4,19 +4,20 @@ Description: Fix validation issues
 
 --- a/obconf.desktop
 +++ b/obconf.desktop
-@@ -1,7 +1,10 @@
+@@ -1,7 +1,11 @@
  [Desktop Entry]
 -Encoding=UTF-8
 +Version=1.0
  Type=Application
  Name=Openbox Configuration Manager
++Keywords=openbox;settings;configurations;themes
 +Name[ca]=Gestor de configuració de l'Openbox
 +Name[de]=Openbox Konfiguration Manager
 +Name[es]=Gestor de configuración de Openbox
  Name[pt]=Gestor de configurações do openbox
  Name[pt_BR]=Gerenciador de configurações do Openbox
  Name[ru]=Менеджер настройки Openbox
-@@ -12,6 +15,9 @@ GenericName[pt_BR]=Gerenciador de config
+@@ -12,6 +16,9 @@ GenericName[pt_BR]=Gerenciador de config
  GenericName[ru]=Менеджер настройки Openbox
  GenericName[zh_TW]=Openbox 組態管理器
  Comment=Tweak settings for Openbox
@@ -26,6 +27,7 @@ Description: Fix validation issues
  Comment[pt]=Ajustar definições do Openbox
  Comment[pt_BR]=Configure as opções do Openbox
  Comment[ru]=Настройка Openbox
+
 --- a/x-openbox-theme.desktop
 +++ b/x-openbox-theme.desktop
 @@ -1,7 +1,8 @@

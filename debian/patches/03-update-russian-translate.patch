@@ -1,0 +1,286 @@
+Description: Update russian translate
+Author: Mateusz Łukasik <mati75@linuxmint.pl>
+Bug-Ubuntu: https://bugs.launchpad.net/bugs/1408694
+
+--- a/po/ru.po
++++ b/po/ru.po
+@@ -8,14 +8,14 @@ msgstr ""
+ "Project-Id-Version: ObConf-2.0.4\n"
+ "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
+ "POT-Creation-Date: 2013-08-11 20:49-0400\n"
+-"PO-Revision-Date: 2008-05-03 10:45+0700\n"
+-"Last-Translator: Anton Dobkin <anton@viansib.ru>\n"
++"PO-Revision-Date: 2015-01-08 19:08+0300\n"
++"Last-Translator: peregrine <andrej1741@yandex.ru>\n"
+ "Language-Team: Russian <ru@li.org>\n"
+ "Language: ru\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Generator: KBabel 1.11.4\n"
++"X-Generator: Poedit 1.5.4\n"
+ 
+ #: src/strings.c:7
+ msgid "Openbox Configuration Manager"
+@@ -53,7 +53,7 @@ msgstr "<span weight=\"bold\">Окна</
+ 
+ #: src/strings.c:15
+ msgid "_Windows retain a border when undecorated"
+-msgstr "_Окно сохраняет границу когда нет декорации"
++msgstr "_Окно сохраняет границу, когда нет декорации"
+ 
+ #: src/strings.c:16
+ msgid "A_nimate iconify and restore"
+@@ -61,7 +61,7 @@ msgstr "А_нимированое  св�
+ 
+ #: src/strings.c:17
+ msgid "<span weight=\"bold\">Window Titles</span>"
+-msgstr "<span weight=\"bold\">Название Окна</span>"
++msgstr "<span weight=\"bold\">Название окна</span>"
+ 
+ #: src/strings.c:19
+ msgid "_Button order:"
+@@ -77,13 +77,13 @@ msgid ""
+ "M - The maximize button\n"
+ "C - The close button"
+ msgstr ""
+-"N - Значек окна \n"
+-" D - Все-рабочие столы (липкая) кнопка \n"
+-"S - The shade (roll up) button\n"
++"N - Значок окна \n"
++"D - Все-рабочие столы (липкая) кнопка \n"
++"S - Кнопка сворачивания в заголовок\n"
+ "L - Метка (название окна) \n"
+-" I - Кнопка сворачивания \n"
++"I - Кнопка сворачивания \n"
+ "М - Кнопка восстановления \n"
+-" C - Кнопка закрытия"
++"C - Кнопка закрытия"
+ 
+ #: src/strings.c:28
+ msgid ""
+@@ -104,7 +104,7 @@ msgid ""
+ "Iconify (Minimize)\n"
+ "Maximize"
+ msgstr ""
+-"Значек окна\n"
++"Значок окна\n"
+ "Метка окна (Название)\n"
+ "Сворачивание\n"
+ "Восстановление"
+@@ -126,7 +126,7 @@ msgid ""
+ "Omnipresent (On all desktops)"
+ msgstr ""
+ "Закрыть\n"
+-"Shade (Roll up)\n"
++"Свернуть в заголовок\n"
+ "Вездесущий (На всех рабочих столах)"
+ 
+ #: src/strings.c:42
+@@ -171,7 +171,7 @@ msgstr "Фокус на _новые ок
+ 
+ #: src/strings.c:54
+ msgid "<span weight=\"bold\">Placing Windows</span>"
+-msgstr "<span weight=\"bold\">Размещение Окон</span>"
++msgstr "<span weight=\"bold\">Размещение окон</span>"
+ 
+ #: src/strings.c:56
+ msgid "_Place new windows under the mouse pointer"
+@@ -191,7 +191,7 @@ msgstr "Все мониторы"
+ 
+ #: src/strings.c:60
+ msgid "The active monitor"
+-msgstr "Активный манитор"
++msgstr "Активный монитор"
+ 
+ #: src/strings.c:61
+ msgid "The monitor with the mouse"
+@@ -199,33 +199,36 @@ msgstr "Монитор с мышью"
+ 
+ #: src/strings.c:62
+ msgid "<span weight=\"bold\">Primary Monitor</span>"
+-msgstr ""
++msgstr "<span weight=\"bold\">Основной монитор</span>"
+ 
+ #: src/strings.c:64
++#, fuzzy
+ msgid ""
+ "The primary monitor is where Openbox will place dialogs, such as the one "
+ "used for cycling windows."
+ msgstr ""
++"Основной монитор тот, на котором Openbox будет размещать диалоги, такие как "
++"тот, который используется для циклических окон."
+ 
+ #: src/strings.c:65
+ msgid "Primary _monitor:"
+-msgstr ""
++msgstr "Основной _монитор"
+ 
+ #: src/strings.c:66
+ msgid "Fixed Monitor"
+-msgstr ""
++msgstr "Зафиксированный монитор"
+ 
+ #: src/strings.c:67
+ msgid "Active Monitor"
+-msgstr ""
++msgstr "Активный монитор"
+ 
+ #: src/strings.c:68
+ msgid "Monitor With Mouse Pointer"
+-msgstr ""
++msgstr "Монитор с указателем мыши"
+ 
+ #: src/strings.c:70
+ msgid "_Fixed monitor:"
+-msgstr ""
++msgstr "_Зафиксированный монитор:"
+ 
+ #: src/strings.c:71
+ msgid "Windows"
+@@ -233,7 +236,7 @@ msgstr "Окна"
+ 
+ #: src/strings.c:72
+ msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
+-msgstr "<span weight=\"bold\">Перемещение и Изменение размера Окон</span>"
++msgstr "<span weight=\"bold\">Перемещение и изменение размера окон</span>"
+ 
+ #: src/strings.c:74
+ msgid "Update the window contents while _resizing"
+@@ -255,11 +258,11 @@ msgstr "Отступ от других _
+ 
+ #: src/strings.c:79
+ msgid "Amount of resistance against screen _edges:"
+-msgstr "Отступ от краев _экрана: "
++msgstr "Отступ от краёв _экрана: "
+ 
+ #: src/strings.c:81
+ msgid "_Switch desktops when moving a window past the screen edge"
+-msgstr "_Переключать рабочии столы, когда окно перемещается на край экрана"
++msgstr "_Переключать рабочие столы, когда окно перемещается на край экрана"
+ 
+ #: src/strings.c:83
+ msgid "_Amount of time to wait before switching:"
+@@ -272,7 +275,7 @@ msgstr "мс"
+ 
+ #: src/strings.c:85
+ msgid "<span weight=\"bold\">Information Dialog</span>"
+-msgstr "<span weight=\"bold\">Информационный Диалог</span>"
++msgstr "<span weight=\"bold\">Информационный диалог</span>"
+ 
+ #: src/strings.c:86
+ msgid "Show _information dialog:"
+@@ -328,15 +331,15 @@ msgstr "Фиксированная по�
+ 
+ #: src/strings.c:103
+ msgid "From top edge"
+-msgstr ""
++msgstr "По верхнему краю"
+ 
+ #: src/strings.c:104
+ msgid "From bottom edge"
+-msgstr ""
++msgstr "По нижнему краю"
+ 
+ #: src/strings.c:106
+ msgid "Move & Resize"
+-msgstr "Перемещение & Измение размера"
++msgstr "Перемещение и измение размера"
+ 
+ #: src/strings.c:109
+ msgid "_Focus windows when the mouse pointer moves over them"
+@@ -384,7 +387,7 @@ msgstr "Мышь"
+ 
+ #: src/strings.c:125
+ msgid "<span weight=\"bold\">Desktops</span>"
+-msgstr "<span weight=\"bold\">Рабочии столы</span>"
++msgstr "<span weight=\"bold\">Рабочие столы</span>"
+ 
+ #: src/strings.c:127
+ msgid "_Show a notification when switching desktops"
+@@ -404,7 +407,7 @@ msgstr "_Названия  рабочи�
+ 
+ #: src/strings.c:133
+ msgid "Desktops"
+-msgstr "Рабочии столы"
++msgstr "Рабочие столы"
+ 
+ #: src/strings.c:134
+ msgid "<span weight=\"bold\">Desktop Margins</span>"
+@@ -442,7 +445,7 @@ msgstr "Отступы"
+ 
+ #: src/strings.c:146
+ msgid "<span weight=\"bold\">Dock</span>"
+-msgstr ""
++msgstr "<span weight=\"bold\">Док</span>"
+ 
+ #: src/strings.c:148
+ msgid ""
+@@ -591,7 +594,7 @@ msgstr ""
+ 
+ #: src/main.c:62
+ msgid "ObConf Error"
+-msgstr ""
++msgstr "Ошибка ObConf"
+ 
+ #: src/main.c:76 src/main.c:78 src/main.c:80
+ msgid "Copyright (c)"
+@@ -611,32 +614,32 @@ msgstr ""
+ 
+ #: src/main.c:93
+ msgid "  --help                Display this help and exit\n"
+-msgstr "  --help                Показать справку и выйти\n"
++msgstr "  --help              Показать справку и выйти\n"
+ 
+ #: src/main.c:94
+ msgid "  --version             Display the version and exit\n"
+-msgstr "  --version            Показать версию и выйти\n"
++msgstr "  --version           Показать версию и выйти\n"
+ 
+ #: src/main.c:95
+ msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+-msgstr ""
+-"  --install АРХИВ.obt       Установить данный архив темы и выбрать его\n"
++msgstr "  --install АРХИВ.obt Установить данный архив темы и выбрать его\n"
+ 
+ #: src/main.c:96
+ msgid ""
+ "  --archive THEME       Create a theme archive from the given theme "
+ "directory\n"
+-msgstr "  --archive ТЕМА       Создать архив темы из данного каталога\n"
++msgstr "  --archive ТЕМА      Создать архив темы из данного каталога\n"
+ 
+ #: src/main.c:97
+ msgid "  --config-file FILE    Specify the path to the config file to use\n"
+ msgstr ""
+-"  --config-file ФАЙЛ    Специфический путь к конфигурационному файлу, "
+-"который будет использован\n"
++"  --config-file ФАЙЛ  Специфический путь к конфигурационному файлу, который "
++"будет использован\n"
+ 
+ #: src/main.c:98
+ msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+ msgstr ""
++"  --tab НОМЕР           Переключиться на вкладку номер НОМЕР при старте\n"
+ 
+ #: src/main.c:99
+ #, c-format
+@@ -663,15 +666,15 @@ msgstr "--config-file требуется
+ 
+ #: src/main.c:133
+ msgid "--tab requires an argument\n"
+-msgstr ""
++msgstr "--tab требует аргумент\n"
+ 
+ #: src/main.c:225
+ msgid ""
+ "Failed to load the obconf.glade interface file. You have probably failed to "
+ "install ObConf properly."
+ msgstr ""
+-"Ошибка загрузки файла интерфейса obconf. Вероятно, Openbox был установлен не "
+-"правильно."
++"Ошибка загрузки файла .glade интерфейса obconf. Вероятно, Openbox был "
++"установлен не правильно."
+ 
+ #: src/main.c:251
+ msgid ""
