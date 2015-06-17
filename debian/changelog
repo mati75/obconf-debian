@@ -1,13 +1,16 @@
 obconf (1:2.0.4-3) unstable; urgency=high
 
-  * Add 02-Fix-tab-error.patch to fix segfaults with tab option.
-    (Closes: #740088, #760565)
+  * debian/patches/02-Fix-tab-error.patch
+    - Add patch to fix segfaults in tab option. (Closes: #740088)
   * debian/control:
-    - bump standard version.
+    - Bump standards version to 3.9.6 (no changes required).
+    - Bump minimal openbox version to 3.6.
+    - Update Homepage field.
   * debian/copyright:
-    - update dates.
+    - Update years.
+  * Update debian/watch with new upstream website.
 
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 20 Feb 2015 17:51:13 +0100
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Thu, 11 Jun 2015 19:02:57 +0200
 
 obconf (1:2.0.4-2) unstable; urgency=low
 

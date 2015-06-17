@@ -1,2 +1,2 @@
 version=3
-http://www.openbox.org/dist/obconf/obconf-(.+)\.tar\.gz
+https://github.com/danakj/obconf/releases /danakj/obconf/archive/release-(.+)\.tar\.gz
