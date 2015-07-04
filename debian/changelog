@@ -1,6 +1,6 @@
 obconf (1:2.0.4+git20150213-1) UNRELEASED; urgency=medium
 
-  * Merged latest upstream revision: (Closes: #788458, LP: #1272834)
+  * Merged latest upstream revision: (LP: #1272834)
     - Remove 02-Fix-tab-error.patch -- included upstream. 
   * Remove unneeded file: debian/patches/dupa.patch.
   * Refresh 01-freedesktop-compliance.patch for provides Keywords.
@@ -8,6 +8,7 @@ obconf (1:2.0.4+git20150213-1) UNRELEASED; urgency=medium
     (LP: 1408694)
   * Update debian/watch - thanks bartm!
   * Add lintian-overrides for debian-watch-may-check-gpg-signature.
+  * Bump minimal openbox version to 3.6.1-1. (Closes: #788458)
 
  -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 20 Feb 2015 19:48:03 +0100
 
