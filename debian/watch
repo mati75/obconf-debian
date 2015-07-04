@@ -1,2 +1,5 @@
 version=3
-https://github.com/danakj/obconf/releases /danakj/obconf/archive/release-(.+)\.tar\.gz
+opts=dversionmangle=s/\+git20\d{6}$//;s/\+git[a-f\d]+$//;s/\+git\d+\S*// \
+https://github.com/danakj/obconf/releases \
+.*[^n]/(?:|v|version-|version|release-|r|REL_|rel-|obconf(?:_|-))(\d[^\s/]*)\.(?:tar\.xz|txz|tar\.bz2|tbz2|tar\.gz|tgz)
+
