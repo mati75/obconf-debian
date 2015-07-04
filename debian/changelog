@@ -1,3 +1,31 @@
+obconf (1:2.0.4+git20150213-1) UNRELEASED; urgency=medium
+
+  * Merged latest upstream revision. (LP: #1272834)
+  * Remove unneeded file: debian/patches/dupa.patch.
+  * Refresh 01-freedesktop-compliance.patch for provides Keywords.
+  * Add update-russian-translate.patch to fix Russian translate. (LP: 1408694) 
+  * Update debian/watch - thanks bartm!
+  * Add lintian-overrides for debian-watch-may-check-gpg-signature.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 20 Feb 2015 19:48:03 +0100
+
+obconf (1:2.0.4+git20130908-2) experimental; urgency=low
+
+  * Synchronized with unstable.
+  * Update debian/patches/01-freedesktop-compliance.patch.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 15 Nov 2013 13:05:26 +0100
+
+obconf (1:2.0.4+git20130908-1) experimental; urgency=low
+
+  * Merge upstream version 2.0.4+git20130908: (LP: #1218221)
+    - use gtk3 for now. (LP: #1059543)
+    - refresh debian/patches/update_desktop.patch. (LP: #1179969)
+  * Use xz compress for sources and binaries.
+  * Upload to experimental.
+
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Tue, 29 Oct 2013 16:39:08 +0100
+
 obconf (1:2.0.4-3) unstable; urgency=high
 
   * debian/patches/02-Fix-tab-error.patch
