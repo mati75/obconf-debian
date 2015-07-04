@@ -1,9 +1,11 @@
 obconf (1:2.0.4+git20150213-1) UNRELEASED; urgency=medium
 
-  * Merged latest upstream revision. (LP: #1272834)
+  * Merged latest upstream revision: (LP: #1272834)
+    - Remove 02-Fix-tab-error.patch -- included upstream. 
   * Remove unneeded file: debian/patches/dupa.patch.
   * Refresh 01-freedesktop-compliance.patch for provides Keywords.
-  * Add update-russian-translate.patch to fix Russian translate. (LP: 1408694) 
+  * Add 02-update-russian-translate.patch to fix Russian translate.
+    (LP: 1408694)
   * Update debian/watch - thanks bartm!
   * Add lintian-overrides for debian-watch-may-check-gpg-signature.
 
