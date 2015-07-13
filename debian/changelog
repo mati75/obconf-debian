@@ -1,16 +1,25 @@
-obconf (1:2.0.4+git20150213-1) UNRELEASED; urgency=medium
+obconf (1:2.0.4+git20150213-1) unstable; urgency=medium
 
-  * Merged latest upstream revision: (LP: #1272834)
-    - Remove 02-Fix-tab-error.patch -- included upstream. 
-  * Remove unneeded file: debian/patches/dupa.patch.
-  * Refresh 01-freedesktop-compliance.patch for provides Keywords.
-  * Add 02-update-russian-translate.patch to fix Russian translate.
-    (LP: 1408694)
-  * Update debian/watch - thanks bartm!
-  * Add lintian-overrides for debian-watch-may-check-gpg-signature.
-  * Bump minimal openbox version to 3.6.1-1. (Closes: #788458)
+  * Merge latest upstream revision: (LP: #1272834)
+    + Remove 02-Fix-tab-error.patch -- included upstream.
+  * Merge changes from unstable.
+  * debian/patches:
+    + Drop dupa.patch.
+    + Refresh 01-freedesktop-compliance.patch to provide Keywords entry.
+    + Add 02-update-russian-translate.patch to fix Russian translation.
+      (LP: 1408694)
+  * debian/watch:
+    + Update, thanks bartm!
+  * debian/source/lintian-overrides:
+    + Add debian-watch-may-check-gpg-signature.
+  * debian/control:
+    + Bump minimal openbox version to 3.6.1-1. (Closes: #788458)
+  * debian/obconf.docs:
+    + Remove TODO file.
+  * debian/changelog:
+    + Upload to unstable.
 
- -- Mateusz Łukasik <mati75@linuxmint.pl>  Fri, 20 Feb 2015 19:48:03 +0100
+ -- Mateusz Łukasik <mati75@linuxmint.pl>  Sat, 04 Jul 2015 22:48:19 +0200
 
 obconf (1:2.0.4+git20130908-2) experimental; urgency=low
 
