@@ -3,6 +3,7 @@ obconf (1:2.0.4+git20150213-2) UNRELEASED; urgency=medium
   * debian/control:
     + Bump Standards-Version to 3.9.8.
     + Use secured VCS links.
+    + Bump minimal openbox version to 3.6.1-3~ -- fix FTBFS on Ubuntu 17.04.
   * Drop menu file.
   * Drop debian/pixmaps -- no longer needed.
   * Bump minimal dh version to 10.
