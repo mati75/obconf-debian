@@ -9,7 +9,7 @@ Build-Depends:
 Standards-Version: 3.9.8
 Homepage: https://github.com/danakj/obconf
 Vcs-Browser: https://github.com/mati75/obconf-debian.git
-Vcs-Git: git://github.com/mati75/obconf-debian.git
+Vcs-Git: https://github.com/mati75/obconf-debian.git
 
 Package: obconf
 Architecture: any
