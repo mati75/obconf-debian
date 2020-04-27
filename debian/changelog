@@ -1,6 +1,7 @@
 obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
 
   * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 
