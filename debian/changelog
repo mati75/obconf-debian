@@ -1,3 +1,13 @@
+obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
+
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Update renamed lintian tag names in lintian overrides.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Fix day-of-week for changelog entry 2.0.1-1.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
+
 obconf (1:2.0.4+git20150213-2) unstable; urgency=medium
 
   * debian/control:
@@ -215,7 +225,7 @@ obconf (2.0.1-1) unstable; urgency=low
   * Remove unused dpatch stuff.
   * Add menu file.
 
- -- Anibal Avelar (Fixxxer) <aavelar@cofradia.org>  Sun, 15 Jun 2007 23:44:05 +0200
+ -- Anibal Avelar (Fixxxer) <aavelar@cofradia.org>  Fri, 15 Jun 2007 23:44:05 +0200
 
 obconf (1.6-1) unstable; urgency=low
 
