@@ -5,6 +5,8 @@ obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
   * Update renamed lintian tag names in lintian overrides.
   * Set upstream metadata fields: Repository, Repository-Browse.
   * Fix day-of-week for changelog entry 2.0.1-1.
+  * Remove constraints unnecessary since stretch:
+    + Build-Depends: Drop versioned constraint on debhelper.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 
