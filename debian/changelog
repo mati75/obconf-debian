@@ -9,6 +9,8 @@ obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
     + Build-Depends: Drop versioned constraint on debhelper.
   * Bump debhelper dependency to >= 10, since that's what is used in
     debian/compat.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on openbox-dev.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 
