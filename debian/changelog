@@ -12,6 +12,10 @@ obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
   * Remove constraints unnecessary since buster:
     + Build-Depends: Drop versioned constraint on openbox-dev.
 
+  [ Pino Toscano ]
+  * Stop shipping the old KDE desktop MIME types, as they are no more needed
+    now. (Closes: #875517)
+
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 
 obconf (1:2.0.4+git20150213-2) unstable; urgency=medium

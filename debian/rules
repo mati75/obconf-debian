@@ -4,3 +4,8 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
 	dh ${@}
+
+override_dh_auto_install:
+	dh_auto_install
+	# drop old KDE desktop MIMEs
+	rm -rfv debian/obconf/usr/share/mimelnk/
