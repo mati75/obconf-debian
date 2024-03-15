@@ -7,6 +7,7 @@ Build-Depends:
  libimlib2-dev, libsm-dev, libstartup-notification0-dev,
  libcairo2-dev, openbox-dev
 Standards-Version: 4.6.2
+Rules-Requires-Root: no
 Homepage: https://github.com/danakj/obconf
 Vcs-Browser: https://github.com/mati75/obconf-debian.git
 Vcs-Git: https://github.com/mati75/obconf-debian.git
