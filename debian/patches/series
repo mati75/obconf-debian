@@ -1,3 +1,4 @@
 01-freedesktop-compliance.patch
 02-update-russian-translate.patch
 fix-spelling-error.patch
+obconf-c99.patch
