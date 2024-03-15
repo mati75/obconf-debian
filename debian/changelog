@@ -20,6 +20,9 @@ obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
   [ Mateusz Łukasik ]
   * Add patch from Gentoo for fix FTBFS with the compiler flag 
     -Werror=implicit-function-declaration. (Closes: #1066381) 
+  * Bump Standards-Version to 4.6.2.
+  * Bump d/watch to 4 version.
+  * Convert sources to dh 13.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 

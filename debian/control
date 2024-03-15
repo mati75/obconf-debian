@@ -3,10 +3,10 @@ Section: x11
 Priority: optional
 Maintainer: Mateusz Łukasik <mati75@linuxmint.pl>
 Build-Depends:
- debhelper (>= 10~), autopoint, gettext, libgtk-3-dev,
+ debhelper-compat (= 13), autopoint, gettext, libgtk-3-dev,
  libimlib2-dev, libsm-dev, libstartup-notification0-dev,
  libcairo2-dev, openbox-dev
-Standards-Version: 3.9.8
+Standards-Version: 4.6.2
 Homepage: https://github.com/danakj/obconf
 Vcs-Browser: https://github.com/mati75/obconf-debian.git
 Vcs-Git: https://github.com/mati75/obconf-debian.git
