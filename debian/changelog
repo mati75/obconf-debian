@@ -27,6 +27,7 @@ obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
     (Closes: #1048752)
   * Add Rules-Requires-Root to d/control.
   * Rename overrides in d/source/lintian-overrides.
+  * Update year in d/copyright.
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 
