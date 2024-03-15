@@ -23,6 +23,8 @@ obconf (1:2.0.4+git20150213-3) UNRELEASED; urgency=medium
   * Bump Standards-Version to 4.6.2.
   * Bump d/watch to 4 version.
   * Convert sources to dh 13.
+  * Add d/clean for fix Fails to build source after successful build.
+    (Closes: #1048752)
 
  -- Debian Janitor <janitor@jelmer.uk>  Mon, 27 Apr 2020 01:23:07 +0000
 
